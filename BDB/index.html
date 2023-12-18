@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="assets/js/script.js"></script>
+    <title>BDB</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="/" />BDB</a>
+    </header>
+    <section>
+
+        <!--  -->
+        <form action="" id="search">
+            <input type="text" placeholder="🔍 Nimani qidirmoqchisiz ?" />
+            <button id="search-button" class="fa fa-search"></button>
+        </form>
+
+        <!-- Operators -->
+        <div id="oper-border">
+            <div id="operators">
+                <div id="operators-title">
+                    <h3>Aloqa operatorlari</h3>
+                </div>
+                <div id="operators-list">
+                    <!-- Operator Box -->
+                    <div id="operator-box" onclick="FilterOperator()">
+                        <img src="/" />
+                        <h4>Operator Name</h4>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+
+        <!-- Advertise Field (Blank) -->
+        <div id="ads">
+            <!-- Reklama uchun joy -->
+        </div>
+
+        <!-- Maqolalar -->
+        <div id="articles-border">
+            <div id="articles">
+                <!-- Article Title -->
+                <div id="articles-title">
+                    <h3>So'nggi Maqolalar</h3>
+                </div>
+                <!-- All Articles -->
+                <div id="articles-list">
+                    <!-- Add Delete -->
+                    <div id="article-box" onclick="MoreBtnIn()">
+                        <!--  -->
+                        <div id="logo-name">
+                            <img src="/" />
+                            <p>Operator Name</p>
+                        </div>
+                        <!--  -->
+                        <div id="title-info">
+                            <h3>Title Name Article</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, magnam!</p>
+                        </div>
+                    </div>
+                </div>           
+            </div>
+        </div>
+
+        <!-- Additional Functions -->
+        <div id="additional">
+            <!-- Message Box -->
+            <div id="message-box">
+                <div id="contact-list">
+                    <div id="fbb" onclick="TelegramBtn()"><i class="fa fa-paper-plane"></i>Telegram</div>
+                    <div id="a" onclick="StartChat()"><i class="fa fa-comments"></i>Send Message</div>
+                </div>
+                <div id="message-hr" onclick="ShowDisplay()"></div>
+            </div>
+
+            <!-- Pop-Up Contact Us -->
+            <div id="pop-contact">
+                <div id="pop-title">
+                    <p onclick="ExitBtn()" id="pop-exit">X</p>
+                    <a href="pages/fullscreen-chat.html" id="fullscreen" class="fa fa-external-link"></a>
+                </div>
+                <div id="live-chat">
+                    <div id="operatorr">
+                        <p>Hello World ! This is my world is big for green</p>
+                    </div>
+                    <div id="userr">
+                        <p id="ozgr">Hello Everyone saodkoidjfgiojiogdfjgidjgodfjgiofdgjdfiogj iofdjiog jdiofjgiodfjgiofdjgdfijgoidj ddioj iodfjoigjdfiogjdfiogjdio iodfjgoidfjgoidfgjiof iofdjoigjdiofgjdfigdfjgodjfgioj iodfjiogjdfiogjdfoigjdfjngjkdfngjkdfgndfjkgnfdjkgndfjkgndfgjkdfngdjfngkjfdngjkdfgnfdjknasdokasodka oaksod kaso kdaso kaos kdasokxoskvokokdoksodfksfoksdfsd dsf sdf sdf dsf dsfsdfdsfdsfs f ds fsd f sdfsdfsdfsd!</p>
+                    </div>
+                </div>
+                <form action="" autocomplete="off">
+                    <input id="chat-send" type="text" placeholder="Yoz ..." />
+                    <button class="fa fa-paper-plane-o" id="sender"></button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
