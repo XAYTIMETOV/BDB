@@ -55,18 +55,9 @@ section{
     max-width: 1240px;
 }
 
-#articles-title{
-    margin: 20px 0;
-}
-
-#articles-title h3{
-    margin-left: 10px;
-    font-size: 20px;
-}
-
 #articles-list{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 15px;
 }
 
@@ -74,7 +65,7 @@ section{
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 32%;
+    width: 100%;
     min-width: 350px;
     min-height: 250px;
     max-height: 250px;
@@ -124,16 +115,4 @@ section{
     height: 120px;
     overflow: hidden;
     word-break: break-all;
-}
-
-footer{
-    border-top: solid 2px black;
-    display: flex;
-    justify-content: center;
-    height: 200px;
-}
-
-#foot{
-    padding: 10px 20px;
-    width: 1200px;
 }
