@@ -137,3 +137,15 @@ footer{
     padding: 10px 20px;
     width: 1200px;
 }
+
+@media screen and (max-width: 1250px) {
+    #article-box{
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 774px) {
+    #article-box{
+        width: 100%;
+    }
+}

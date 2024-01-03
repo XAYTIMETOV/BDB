@@ -116,3 +116,15 @@ section{
     overflow: hidden;
     word-break: break-all;
 }
+
+footer{
+    border-top: solid 2px black;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+#foot{
+    padding: 10px 20px;
+    width: 1200px;
+}
