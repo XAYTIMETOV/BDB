@@ -30,9 +30,16 @@ header{
 }
 
 header a{
+    display: flex;
+    align-items: center;
     font-size: 30px;
     font-weight: 500px;
     outline: none;
+}
+
+header a img{
+    width: 30px;
+    height: 30px;
 }
 
 #night-mode{
