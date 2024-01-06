@@ -19,7 +19,7 @@ body{
 }
 
 header{
-    height: 50px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,14 +30,16 @@ header{
 header a{
     display: flex;
     align-items: center;
-    font-size: 30px;
+    font-size: 100px;
     font-weight: 500px;
     outline: none;
 }
 
 header a img{
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    border: solid 2px;
 }
 
 section{
