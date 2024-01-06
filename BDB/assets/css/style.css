@@ -138,6 +138,12 @@ section{
     cursor: pointer;
 }
 
+#operator-box:hover{
+    box-shadow: 0 0 10px gray;
+    transform: scale(1.02);
+    transition: 0.5s;
+}
+
 #operator-box img{
     border: solid  2px;
     border-radius: 100px;
@@ -200,6 +206,12 @@ section{
     background-color: white;
     padding: 10px;
     cursor: pointer;
+}
+
+#article-box:hover{
+    box-shadow: 0 0 10px gray;
+    transform: scale(1.02);
+    transition: 0.5s;
 }
 
 #logo-name{
@@ -469,6 +481,67 @@ section{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     cursor: pointer;
+}
+
+#operator-poll-border{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    padding: 0 25px;
+}
+
+#operator-poll{
+    width: 100%;
+    max-width: 1240px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: white;
+}
+
+#operator-poll label{
+    font-size: 25px;
+}
+
+#operator-poll div{
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+#operator-poll div input{
+    width: 20px;
+    height: 20px;
+}
+
+#operator-poll div label{
+    font-size: 18px;
+}
+
+#submit-o{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+
+#result-o{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    margin-top: 10px;
+    border: solid 1px gray;
+    outline: none;
+    border-radius: 20px;
 }
 
 footer{
