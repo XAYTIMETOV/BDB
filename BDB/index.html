@@ -98,10 +98,25 @@
                     <button class="fa fa-paper-plane-o" id="sender"></button>
                 </form>
             </div>
+
+            <!-- Pop-Up Poll Result -->
+            <div id="pop-poll-result">
+                <div id="names">
+                    <div><h3>Ucell</h3></div>
+                    <div><h3>Beeline</h3></div>
+                    <div><h3>MOBIUZ</h3></div>
+                    <div><h3>Uzmobile</h3></div>
+                    <div><h3>Perfectum</h3></div>
+                    <div><h3>HUMANS</h3></div>
+                    <div><h3>Boshqa&nbsp/&nbspRouming</h3></div>
+                    <button onclick="HidePollResults()">Orqaga</button>
+                </div>
+            </div>
         </div>
     </section>
 
     <div id="operator-poll-border">
+        <!-- Poll -->
         <form action="" id="operator-poll">
             <label for="operator-poll">Qaysi operatordan foydalanasiz ?</label>
             <div>
@@ -133,7 +148,7 @@
                 <label for="other-o">&nbspBoshqa / Rouming</label>
             </div>
             <input type="submit" id="submit-o" value="Ovoz berish" />
-            <input type="button" id="result-o" value="Natija">
+            <input type="button" id="result-o" value="Natija" onclick="PollResults()" />
         </form>
     </div>
 

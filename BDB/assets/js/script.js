@@ -42,3 +42,11 @@ function MoreBtnIn(){
 function MoreBtn(){
     window.open("article-more.html", "_self");
 }
+
+function PollResults(){
+    document.getElementById("pop-poll-result").style.display = "block";
+}
+
+function HidePollResults(){
+    document.getElementById("pop-poll-result").style.display = "none";
+}
