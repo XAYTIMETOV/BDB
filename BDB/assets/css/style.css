@@ -17,7 +17,7 @@
 body{
     display: flex;
     flex-direction: column;
-    background-color: antiquewhite;
+    background-color: whitesmoke;
 }
 
 header{
@@ -600,7 +600,8 @@ section{
 }
 
 footer{
-    border-top: solid 2px black;
+    background-color: gray;
+    color: white;
     display: flex;
     justify-content: center;
     height: 200px;
