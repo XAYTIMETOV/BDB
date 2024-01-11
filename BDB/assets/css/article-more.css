@@ -79,7 +79,7 @@ section{
     min-height: 250px;
     max-height: 250px;
     border-radius: 10px;
-    box-shadow: 0 0 5px gray;
+    box-shadow: 0 0 2px gray;
     background-color: white;
     padding: 10px;
 }
@@ -134,7 +134,7 @@ section{
 }
 
 #comments{
-    box-shadow: 0 0 5px gray;
+    box-shadow: 0 0 2px gray;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -154,7 +154,7 @@ section{
     max-height: 300px;
     overflow: hidden;
     border-radius: 5px;
-    box-shadow: 0 0 3px gray;
+    box-shadow: 0 0 2px gray;
     background-color: white;
     padding: 10px;
 }
@@ -187,7 +187,7 @@ section{
 #add-comment form{
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 0 5px gray;
+    box-shadow: 0 0 2px gray;
     width: 100%;
     background-color: white;
     max-width: 1240px;

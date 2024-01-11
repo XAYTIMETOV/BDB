@@ -150,6 +150,12 @@ header a img{
     cursor: pointer;
 }
 
+#form-bttns input:hover{
+    background-color: royalblue;
+    color: white;
+    transition: 0.5s;
+}
+
 footer{
     background-color: gray;
     color: white;
