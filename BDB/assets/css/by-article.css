@@ -65,7 +65,7 @@ section{
 }
 
 #articles-title{
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
 #articles-title h3{
@@ -136,9 +136,25 @@ section{
 #title-info p{
     padding-top: 2px;
     font-size: 18px;
-    height: 120px;
+    height: 130px;
     overflow: hidden;
     word-break: break-all;
+}
+
+#title-info a{
+    font-size: 12px;
+    border: solid 1px;
+    display: flex;
+    align-items: top;
+    padding: 3px 7px;
+    width: fit-content;
+    border-radius: 50px;
+    height: 25px;
+    overflow-y: hidden;
+}
+
+#title-info a:hover{
+    text-decoration: underline;
 }
 
 footer{

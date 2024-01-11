@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/article-more.css">
+    <script src="../assets/js/script.js"></script>
+    <link rel="stylesheet" href="../assets/css/by-article.css">
     <title>Article Name</title>
 </head>
 <body>
     <header>
         <a href="../index.html"><img src="/" />&nbspUSSD</a>
     </header>
-
     <section>
-        <div id="articles-border">            
+        <div id="articles-border">
             <div id="articles">
+                <!-- Article Title -->
+                <div id="articles-title">
+                    <h3>Article Name</h3>
+                </div>
                 <!-- All Articles -->
                 <div id="articles-list">
                     <!-- Add Delete -->
-                    <div id="article-box">
+                    <div id="article-box" onclick="MoreBtn()">
                         <!--  -->
                         <div id="logo-name">
                             <img src="/" />
@@ -27,6 +31,7 @@
                         <div id="title-info">
                             <h3>Title Name Article</h3>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, magnam!</p>
+                            <a href="by-operator.html">Operator Name</a>
                         </div>
                     </div>
                     
@@ -34,34 +39,6 @@
             </div>
         </div>
     </section>
-
-    <div id="comments-border">
-        <div id="comments">
-            <!-- Comments -->
-            <div id="comm">
-                <h2>Ismi</h2>
-                <p>Izoh bildirildi</p>
-            </div>
-            
-        </div>
-        <a href="all-comments.html">Barcha izohlar</a>
-    </div>
-
-    <div id="add-comment">
-        <form action="">
-            <h1>Fikr bildirish</h1>
-            <div id="name-surname">
-                <input type="text" placeholder="Ismingiz" required />
-                <input type="email" placeholder="Email manzilingiz" required />
-            </div>
-            <textarea name="commentary" required></textarea>
-            <div id="form-bttns">
-                <h1></h1>
-                <input type="submit" value="Yuborish" />
-            </div>
-        </form>
-    </div>
-
     <footer>
         <div id="foot">
             <h1>Footer Info</h1>
