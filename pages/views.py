@@ -5,6 +5,7 @@ from comments.models import Comment
 from votes.models import Vote
 from operators.models import Operator
 from django.db.models import Q
+from django.db.models import Sum
 
 
 def home(request):
@@ -43,11 +44,17 @@ def home(request):
     # Retrieve all operators
     operators = Operator.objects.all()
 
+    total_votes = Operator.objects.aggregate(total_votes=Sum('votes'))['total_votes']
+
+    for operator in operators:
+        operator.percentage = (100 / total_votes) * operator.votes
+
     context = {
         'posts': posts,
         'comments': comments,
         'votes': votes,
-        'operators': operators
+        'operators': operators,
+        'total_votes': total_votes,
     }
 
     return render(request, 'home.html', context)
