@@ -119,12 +119,19 @@ section{
     word-break: break-all;
 }
 
+#sugg-border{
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
 #suggests{
-    margin: 0 20px;
+    box-shadow: 0 0 2px gray;
+    border-radius: 10px;
+    background-color: white;
     padding: 20px;
     display: flex;
     gap: 15px;
-    align-self: center;
     width: 100%;
     max-width: 1240px;
 }
@@ -202,7 +209,7 @@ section{
     margin: 10px 0 20px 0;
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
     padding: 0 20px;
 }
 
@@ -231,11 +238,6 @@ section{
     background-color: white;
     padding: 10px;
     color: black;
-}
-
-#comm:hover{
-    box-shadow: 0 0 5px gray;
-    transform: scale(1.02);
 }
 
 #comm-title{

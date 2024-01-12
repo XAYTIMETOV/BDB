@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {%load static%}
 {% block content %}
+    <h1 id="sugg-title">Barcha izohlar</h1>
     <div id="comments-border">
         <div id="comments">
             <!-- Comments -->
             {% for comment in comments %}
-            <div id="comm">
+            <a href="" id="comm">
                 <div id="comm-title">
                     <h2>{{ comment.name }}</h2>
                     <h5>12.34.1223</h5>
@@ -14,7 +15,7 @@
                     <p>{{ comment.message }}</p>
                 </div>
                 <img src="../../static/images/user.png" />
-            </div>
+            </a>
             {% empty %}
                 <h1>Kamentariyalar mavjud emas</h1>
             {% endfor %}

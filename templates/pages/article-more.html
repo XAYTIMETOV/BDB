@@ -54,7 +54,7 @@
         <div id="comments">
             <!-- Comments -->
             {% for comment in post.comment_set.all %}
-            <a href="#" id="comm">
+            <div id="comm">
                 <div id="comm-title">
                     <h2>{{ comment.name }}</h2>
                     <h5>12.34.1223</h5>
@@ -63,7 +63,7 @@
                     <p>{{ comment.message }}</p>
                 </div>
                 <img src="../../static/images/user.png" />
-            </a>
+            </div>
             {% endfor %}
         </div>
         <a href="{% url 'comments' %}" id="all-comms">Barcha izohlar</a>

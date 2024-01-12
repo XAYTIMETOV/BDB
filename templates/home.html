@@ -144,7 +144,7 @@
         <div id="comments">
             <!-- Comments -->
             {% for comment in comments %}
-                <div id="comm">
+                <a href="" id="comm">
                     <div id="comm-title">
                         <h2>{{ comment.name }}</h2>
                         <h5>12.34.1223</h5>
@@ -153,12 +153,12 @@
                         <p>{{ comment.message }}</p>
                     </div>
                     <img src="../static/images/user.png" />
-                </div>
+                </a>
             {% empty %}
                 <h1>Kamentariya mavjud emas</h1>
             {% endfor %}
         </div>
-        <a href="{% url 'comments' %}">Barcha izohlar</a>
+        <a href="{% url 'comments' %}" id="all-comms">Barcha izohlar</a>
     </div>
 
     <div id="operator-poll-border">

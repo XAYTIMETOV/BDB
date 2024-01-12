@@ -39,6 +39,14 @@ header a img{
     border-radius: 20px;
 }
 
+#sugg-title{
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1300px;
+    align-self: center;
+    padding: 0 40px;
+}
+
 #comments-border{
     margin: 20px 0;
     display: flex;
@@ -69,6 +77,12 @@ header a img{
     box-shadow: 0 0 5px gray;
     background-color: white;
     padding: 10px;
+    color: black;
+}
+
+#comm:hover{
+    box-shadow: 0 0 5px gray;
+    transform: scale(1.02);
 }
 
 #comm-title{
@@ -108,24 +122,6 @@ header a img{
     height: 25px;
     border-radius: 50px;
     border: solid 1px gray;
-}
-
-#comments-border a{
-    width: 100%;
-    max-width: 1240px;
-    margin: 5px 0;
-    text-align: center;
-    padding: 10px 0;
-    border-radius: 20px;
-    background-color: white;
-    border: solid 1px gray;
-    color: black;
-}
-
-#comments-border a:hover{
-    background-color: blue;
-    color: white;
-    transition: 0.5s;
 }
 
 #add-comment{

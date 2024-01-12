@@ -287,7 +287,6 @@ section{
     background-color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
     font-size: 20px;
     width: 35px;
     height: 35px;
@@ -627,6 +626,12 @@ section{
     box-shadow: 0 0 2px gray;
     background-color: white;
     padding: 10px;
+    color: black;
+}
+
+#comm:hover{
+    box-shadow: 0 0 5px gray;
+    transform: scale(1.02);
 }
 
 #comm-title{
@@ -668,7 +673,7 @@ section{
     border: solid 1px gray;
 }
 
-#comments-border a{
+#all-comms{
     width: 100%;
     max-width: 1240px;
     margin: 10px 0 20px 0;
@@ -680,7 +685,7 @@ section{
     color: black;
 }
 
-#comments-border a:hover{
+#all-comms:hover{
     background-color: royalblue;
     color: white;
     transition: 0.5s;
