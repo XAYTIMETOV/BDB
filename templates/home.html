@@ -17,9 +17,9 @@
                 <div id="operators-list">
                     <!-- Operator Boxs -->
                     {% for operator in operators %}
-                        <a id="operator-box" href="/?com={{ operator.name }}">
-                            <img src="{{ operator.photo.url }}"  alt="operator logo"/>
-                            <h4>{{ operator.name }}</h4>
+                        <a id="operator-box" href="/?com={{ operator.name }}" style="border: solid 4px red;">
+                            <img src="{{ operator.photo.url }}"  alt="operator logo" />
+                            <h4 style="color: black;">{{ operator.name }}</h4>
                         </a>
                     {% empty %}
                         <h1>Operatorlar mavjud emas</h1>
@@ -44,7 +44,7 @@
                 <div id="articles-list">
                     <!-- Add Delete -->
                     {% for post in posts %}
-                       <div id="article-box" onclick="MoreBtnIn()">
+                        <div id="article-box">
                             <!--  -->
                             <div id="logo-name">
                                 <img src="{{ post.operator.photo.url }}" alt="operator logo"/>
@@ -54,7 +54,10 @@
                             <div id="title-info">
                                 <h3>{{ post.title }}</h3>
                                 <p>{{ post.body }}</p>
-                                <a href="/?tag={{ post.tag }}">{{ post.tag }}</a>
+                                <div id="arttic">
+                                    <a href="/?tag={{ post.tag }}">{{ post.tag }}</a>
+                                    <a href="{% url 'post' post.slug %}">Batafsil</a>
+                                </div>
                             </div>
                         </div>
                     {% empty %}
@@ -64,17 +67,17 @@
                 <div class="pagination">
                     <span class="step-links">
                         {% if posts.has_previous %}
-                            <a href="?page=1">&laquo; first</a>
-                            <a href="?page={{ posts.previous_page_number }}">previous</a>
+                            <a href="?page=1">&laquo;</a>
+                            <a href="?page={{ posts.previous_page_number }}">&#8249;</a>
                         {% endif %}
                 
                         <span class="current">
-                            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+                            Sahifa {{ posts.number }} ... {{ posts.paginator.num_pages }}.
                         </span>
                 
                         {% if posts.has_next %}
-                            <a href="?page={{ posts.next_page_number }}">next</a>
-                            <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
+                            <a href="?page={{ posts.next_page_number }}">&#8250;</a>
+                            <a href="?page={{ posts.paginator.num_pages }}">&raquo;</a>
                         {% endif %}
                     </span>
                 </div>
@@ -96,19 +99,21 @@
             <div id="pop-contact">
                 <div id="pop-title">
                     <p onclick="ExitBtn()" id="pop-exit">X</p>
-                    <a href="/" id="fullscreen" class="fa fa-external-link"></a>
+                    <a href=""></a>
                 </div>
                 <div id="live-chat">
                     <div id="operatorr">
                         <p>Hello World ! This is my world is big for green</p>
                     </div>
                     <div id="userr">
-                        <p id="ozgr">Hello Everyone saodkoidjfgiojiogdfjgidjgodfjgiofdgjdfiogj iofdjiog jdiofjgiodfjgiofdjgdfijgoidj ddioj iodfjoigjdfiogjdfiogjdio iodfjgoidfjgoidfgjiof iofdjoigjdiofgjdfigdfjgodjfgioj iodfjiogjdfiogjdfoigjdfjngjkdfngjkdfgndfjkgnfdjkgndfjkgndfgjkdfngdjfngkjfdngjkdfgnfdjknasdokasodka oaksod kaso kdaso kaos kdasokxoskvokokdoksodfksfoksdfsd dsf sdf sdf dsf dsfsdfdsfdsfs f ds fsd f sdfsdfsdfsd!</p>
+                        <p id="ozgr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aspernatur deserunt officiis dolorem distinctio voluptatem quidem alias eligendi dolore excepturi rerum, ratione esse. Blanditiis tempore ipsa error architecto facilis sed?</p>
+                        <p id="ozgr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ab quibusdam molestiae odio, aperiam beatae dignissimos vitae, quisquam id quos impedit optio? Debitis quam, animi sint natus quia doloremque nostrum. Atque ad quia reprehenderit consequuntur esse iste! Maxime reiciendis unde quidem expedita quis animi ducimus cupiditate, harum tenetur earum eius!</p>
+
                     </div>
                 </div>
                 <form action="" autocomplete="off">
                     <input id="chat-send" type="text" placeholder="Yoz ..." />
-                    <button class="fa fa-paper-plane-o" id="sender"></button>
+                    <button id="sender"></button>
                 </form>
             </div>
                         <!-- Pop-Up Poll Result -->
@@ -140,8 +145,14 @@
             <!-- Comments -->
             {% for comment in comments %}
                 <div id="comm">
-                    <h2>{{ comment.name }}</h2>
-                    <p>{{ comment.message }}</p>
+                    <div id="comm-title">
+                        <h2>{{ comment.name }}</h2>
+                        <h5>12.34.1223</h5>
+                    </div>
+                    <div id="comm-msg">
+                        <p>{{ comment.message }}</p>
+                    </div>
+                    <img src="../static/images/user.png" />
                 </div>
             {% empty %}
                 <h1>Kamentariya mavjud emas</h1>
@@ -167,9 +178,3 @@
     </div>
 
 {% endblock content %}
-
-{% block script %}
-    function MoreBtnIn(url){
-        window.open(url, "_self");
-    }
-{% endblock script %}

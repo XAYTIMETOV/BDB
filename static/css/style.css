@@ -23,7 +23,7 @@ body{
 header{
     height: 150px;
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
     box-shadow: -5px 0 5px gray;
     background-color: white;
@@ -31,17 +31,14 @@ header{
 
 header a{
     display: flex;
-    align-items: center;
-    font-size: 100px;
-    font-weight: 500px;
+    align-items: top;
     outline: none;
 }
 
 header a img{
-    width: 80px;
-    height: 80px;
+    height: 120px;
+    width: 700px;
     border-radius: 20px;
-    border: solid 2px;
 }
 
 #night-mode{
@@ -135,7 +132,6 @@ section{
     min-width: 180px;
     max-height: 120px;
     border-radius: 10px;
-    border: solid  black;
     background-color: white;
     cursor: pointer;
 }
@@ -147,7 +143,6 @@ section{
 }
 
 #operator-box img{
-    border: solid  2px;
     border-radius: 100px;
     width: 50px;
     height: 50px;
@@ -156,8 +151,8 @@ section{
 
 #operator-box h4{
     font-size: 15px;
+    margin-top: 5px;
     letter-spacing: 1px;
-
     width: 180px;
     height: 42px;
     text-align: center;
@@ -258,7 +253,12 @@ section{
     word-break: break-all;
 }
 
-#title-info a{
+#arttic{
+    display: flex;
+    justify-content: space-between;
+}
+
+#arttic a{
     font-size: 12px;
     border: solid 1px;
     display: flex;
@@ -266,7 +266,6 @@ section{
     padding: 3px 7px;
     width: fit-content;
     border-radius: 50px;
-    height: 25px;
     overflow-y: hidden;
 }
 
@@ -274,12 +273,24 @@ section{
     text-decoration: underline;
 }
 
-#paginations{
+.pagination{
     margin-top: 20px;
-    border: solid 2px;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
+}
+
+.step-links{
+    display: flex;
     gap: 10px;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.step-links a{
+    font-size: 20px;
 }
 
 #additional{
@@ -288,7 +299,12 @@ section{
     width: 100%;
 }
 
+#message-box{
+    z-index: 1;
+}
+
 #contact-list{
+    z-index: 1;
     position: fixed;
     bottom: 90px;
     right: 25px;
@@ -342,13 +358,14 @@ section{
 }
 
 #pop-contact{
+    z-index: 1;
     display: none;
     flex-direction: column;
     position: fixed;
     right: 20px;
     bottom: 15px;
-    width: 260px;
-    height: 350px;
+    width: 380px;
+    max-width: 420px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 2px gray;
@@ -372,17 +389,12 @@ section{
     cursor: pointer;
 }
 
-#fullscreen{
-    cursor: pointer;
-}
-
 #live-chat{
     display: flex;
     flex-direction: column;
     border: solid 2px black;
     border-radius: 10px;
-    width: 240px;
-    height: 260px;
+    max-height: 350px;
     margin: 9px 0;
     padding: 5px;
     row-gap: 7px;
@@ -391,27 +403,35 @@ section{
 }
 
 #operatorr{
-    background-color: whitesmoke;
-    word-wrap: break-word;
-    align-self: flex-start;
-    width: 80%;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
 #operatorr p{
+    background-color: gray;
+    color: white;
+    align-self: flex-start;
+    width: 90%;
+    border-radius: 5px;
     font-size: 12px;
     padding: 5px;
+    word-break: keep-all;
 }
 
 #userr{
-    background-color: lightsteelblue;
-    word-wrap: break-word;
-    align-self: flex-end;
-    width: 90%;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
 #userr p{
+    word-break: break-all;
+    align-self: flex-end;
+    width: 90%;
+    border-radius: 5px;
+    background-color: lightsteelblue;
+    word-break: keep-all;
     font-size: 12px;
     padding: 5px;
 }
@@ -519,7 +539,7 @@ section{
 
 #pop-poll-result{
     position: absolute;
-    top: 240px;
+    top: 385px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -578,6 +598,45 @@ section{
     box-shadow: 0 0 2px gray;
     background-color: white;
     padding: 10px;
+}
+
+#comm-title{
+    display: flex;
+    align-items: center;
+}
+
+#comm-title h2{
+    margin-right: 5px;
+    font-size: 20px;
+    width: 295px;
+    overflow-x: hidden;
+}
+
+#comm-title h5{
+    color: gray;
+}
+
+#comm-msg{
+    margin-top: 5px;
+    display: flex;
+}
+
+#comm-msg p{
+    word-break: break-all;
+    max-width: 340px;
+    max-height: 85px;
+    overflow-y: hidden;
+    margin-right: 10px;
+}
+
+#comm img{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    border: solid 1px gray;
 }
 
 #comments-border a{

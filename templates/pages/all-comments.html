@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
+{%load static%}
 {% block content %}
     <div id="comments-border">
         <div id="comments">
             <!-- Comments -->
             {% for comment in comments %}
-                <div id="comm">
-                    <h2>
-                        {{ comment.name}}</h2>
+            <div id="comm">
+                <div id="comm-title">
+                    <h2>{{ comment.name }}</h2>
+                    <h5>12.34.1223</h5>
+                </div>
+                <div id="comm-msg">
                     <p>{{ comment.message }}</p>
                 </div>
+                <img src="../../static/images/user.png" />
+            </div>
             {% empty %}
                 <h1>Kamentariyalar mavjud emas</h1>
             {% endfor %}
@@ -17,3 +23,7 @@
     </div>
 
 {% endblock content %}
+
+{% block style %}
+<link rel="stylesheet" href="{%static 'css/all-comments.css'%}">
+{% endblock style %}

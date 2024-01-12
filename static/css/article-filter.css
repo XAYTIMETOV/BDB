@@ -19,9 +19,9 @@ body{
 }
 
 header{
-    height: 50px;
+    height: 150px;
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
     box-shadow: -5px 0 5px gray;
     background-color: white;
@@ -29,15 +29,14 @@ header{
 
 header a{
     display: flex;
-    align-items: center;
-    font-size: 30px;
-    font-weight: 500px;
+    align-items: top;
     outline: none;
 }
 
 header a img{
-    width: 30px;
-    height: 30px;
+    height: 120px;
+    width: 700px;
+    border-radius: 20px;
 }
 
 section{

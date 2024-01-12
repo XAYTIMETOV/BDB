@@ -21,7 +21,7 @@ body{
 header{
     height: 150px;
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
     box-shadow: -5px 0 5px gray;
     background-color: white;
@@ -29,17 +29,14 @@ header{
 
 header a{
     display: flex;
-    align-items: center;
-    font-size: 100px;
-    font-weight: 500px;
+    align-items: top;
     outline: none;
 }
 
 header a img{
-    width: 80px;
-    height: 80px;
+    height: 120px;
+    width: 700px;
     border-radius: 20px;
-    border: solid 2px;
 }
 
 #comments-border{
@@ -74,13 +71,43 @@ header a img{
     padding: 10px;
 }
 
-#comm h2{
-    word-break: break-all;
-    margin-bottom: 10px;
+#comm-title{
+    display: flex;
+    align-items: center;
 }
 
-#comm p{
+#comm-title h2{
+    margin-right: 5px;
+    font-size: 20px;
+    max-width: 1150px;
     word-break: break-all;
+}
+
+#comm-title h5{
+    color: gray;
+}
+
+#comm-msg{
+    margin-top: 5px;
+    display: flex;
+}
+
+#comm-msg p{
+    word-break: break-all;
+    max-width: 340px;
+    max-height: 85px;
+    overflow-y: hidden;
+    margin-right: 10px;
+}
+
+#comm img{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    border: solid 1px gray;
 }
 
 #comments-border a{
