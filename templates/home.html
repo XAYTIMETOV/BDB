@@ -17,11 +17,9 @@
                 <div id="operators-list">
                     <!-- Operator Boxs -->
                     {% for operator in operators %}
-                        <a href="/?com={{ operator.name }}">
-                            <div id="operator-box" onclick="FilterOperator()">
-                                <img src="{{ operator.photo.url }}"  alt="operator logo"/>
-                                <h4>{{ operator.name }}</h4>
-                            </div>
+                        <a id="operator-box" href="/?com={{ operator.name }}">
+                            <img src="{{ operator.photo.url }}"  alt="operator logo"/>
+                            <h4>{{ operator.name }}</h4>
                         </a>
                     {% empty %}
                         <h1>Operatorlar mavjud emas</h1>
@@ -46,7 +44,7 @@
                 <div id="articles-list">
                     <!-- Add Delete -->
                     {% for post in posts %}
-                        <div id="article-box" onclick="MoreBtnIn({% url 'post' post.slug %})">
+                       <div id="article-box" onclick="MoreBtnIn()">
                             <!--  -->
                             <div id="logo-name">
                                 <img src="{{ post.operator.photo.url }}" alt="operator logo"/>
