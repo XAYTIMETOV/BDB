@@ -25,11 +25,36 @@
         </div>
     </section>
 
+    <h1 id="sugg-title">Tavfsiya qilinganlar</h1>
+    <div id="sugg-border">
+        <div id="suggests">
+            <div id="sugg-box">
+                <!--  -->
+                <div id="sugg-logo-name">
+                    <img src="{{ post.operator.photo.url }}" alt="operator logo"/>
+                    <p>{{ post.operator.name }}</p>
+                </div>
+                <!--  -->
+                <div id="sugg-title-info">
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.body }}</p>
+                    <div id="sugg-arttic">
+                        <a href="/?tag={{ post.tag }}">{{ post.tag }}</a>
+                        <a href="{% url 'post' post.slug %}">Batafsil</a>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+
+    <h1 id="izoh-title">Izohlar</h1>
     <div id="comments-border">
         <div id="comments">
             <!-- Comments -->
             {% for comment in post.comment_set.all %}
-            <div id="comm">
+            <a href="#" id="comm">
                 <div id="comm-title">
                     <h2>{{ comment.name }}</h2>
                     <h5>12.34.1223</h5>
@@ -38,10 +63,10 @@
                     <p>{{ comment.message }}</p>
                 </div>
                 <img src="../../static/images/user.png" />
-            </div>
+            </a>
             {% endfor %}
         </div>
-        <a href="{% url 'comments' %}">Barcha izohlar</a>
+        <a href="{% url 'comments' %}" id="all-comms">Barcha izohlar</a>
     </div>
 
     <div id="add-comment">

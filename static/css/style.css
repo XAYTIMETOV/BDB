@@ -206,12 +206,6 @@ section{
     cursor: pointer;
 }
 
-#article-box:hover{
-    box-shadow: 0 0 10px gray;
-    transform: scale(1.02);
-    transition: 0.5s;
-}
-
 #logo-name{
     display: flex;
     align-items: center;
@@ -282,7 +276,7 @@ section{
 
 .step-links{
     display: flex;
-    gap: 10px;
+    gap: 5px;
     width: 400px;
     justify-content: center;
     align-items: center;
@@ -290,7 +284,42 @@ section{
 }
 
 .step-links a{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 20px;
+    width: 35px;
+    height: 35px;
+    border: solid 1px;
+    border-radius: 3px;
+    color: gray;
+    box-shadow: 0 0 2px gray;
+}
+
+.step-links a:hover{
+    color: white;
+    background-color: royalblue;
+    transition: 0.5s;
+}
+
+.current{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.current h1{
+    background-color: royalblue;
+    color: white;
+    font-size: 15px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px gray;
+    border-radius: 3px;
 }
 
 #additional{
