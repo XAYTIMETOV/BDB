@@ -32,7 +32,7 @@ function HidePop(){
 }
 
 function FilterOperator(){
-    window.open("pages/article-filter.html", "_self");
+    window.open("pages/by-operator.html", "_self");
 }
 
 function MoreBtnIn(){
@@ -44,9 +44,5 @@ function MoreBtn(){
 }
 
 function PollResults(){
-    document.getElementById("pop-poll-result").style.display = "block";
-}
-
-function HidePollResults(){
-    document.getElementById("pop-poll-result").style.display = "none";
+    document.getElementById("pop-poll-result").style.display = "flex";
 }
