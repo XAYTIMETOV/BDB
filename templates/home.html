@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="assets/js/script.js"></script>
-    <title>USSD KODLAR</title>
-</head>
-<body>
-    <header>
-        <a href="index.html"><img src="/" />&nbspUSSD</a>
-    </header>
+{% extends 'base.html' %}
+{% block content %}
     <section>
 
         <!--  -->
         <form action="" id="search">
-            <input type="text" placeholder="🔍 Nimani qidirmoqchisiz ?" />
+            <input type="text" name="q" placeholder="🔍 Nimani qidirmoqchisiz ?" />
             <button id="search-button" class="fa fa-search"></button>
         </form>
 
@@ -27,11 +15,17 @@
                     <h3>Aloqa operatorlari</h3>
                 </div>
                 <div id="operators-list">
-                    <!-- Operator Box -->
-                    <div id="operator-box" onclick="FilterOperator()">
-                        <img src="/" />
-                        <h4>Operator Name</h4>
-                    </div>                   
+                    <!-- Operator Boxs -->
+                    {% for operator in operators %}
+                        <a href="/?com={{ operator.name }}">
+                            <div id="operator-box" onclick="FilterOperator()">
+                                <img src="{{ operator.photo.url }}"  alt="operator logo"/>
+                                <h4>{{ operator.name }}</h4>
+                            </div>
+                        </a>
+                    {% empty %}
+                        <h1>Operatorlar mavjud emas</h1>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -51,30 +45,42 @@
                 <!-- All Articles -->
                 <div id="articles-list">
                     <!-- Add Delete -->
-                    <div id="article-box" onclick="MoreBtnIn()">
-                        <!--  -->
-                        <div id="logo-name">
-                            <img src="/" />
-                            <p>Operator Name</p>
-                        </div>
-                        <!--  -->
-                        <div id="title-info">
-                            <h3>Title Name Article</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, magnam!</p>
-                            <a href="pages/by-article.html">Article Type</a>
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <div id="paginations">
-                    <a href="#">previous</a>
-                    <div id="pag-pages">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                    </div>
-                    <a href="#">next</a>
+                    {% for post in posts %}
+                        <a href="{% url 'post' post.slug %}">
+                            <div id="article-box" onclick="MoreBtnIn()">
+                                <!--  -->
+                                <div id="logo-name">
+                                    <img src="{{ post.operator.photo.url }}" alt="operator logo"/>
+                                    <p>{{ post.operator.name }}</p>
+                                </div>
+                                <!--  -->
+                                <div id="title-info">
+                                    <h3>{{ post.title }}</h3>
+                                    <p>{{ post.body }}</p>
+                                    <a href="/?tag={{ post.tag }}">{{ post.tag }}</a>
+                                </div>
+                            </div>
+                        </a>
+                    {% empty %}
+                        <h1>Maqolalar mavjud emas</h1>
+                    {% endfor %}
+                </div>           
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if posts.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ posts.previous_page_number }}">previous</a>
+                        {% endif %}
+                
+                        <span class="current">
+                            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+                        </span>
+                
+                        {% if posts.has_next %}
+                            <a href="?page={{ posts.next_page_number }}">next</a>
+                            <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
+                        {% endif %}
+                    </span>
                 </div>
             </div>
         </div>
@@ -94,7 +100,7 @@
             <div id="pop-contact">
                 <div id="pop-title">
                     <p onclick="ExitBtn()" id="pop-exit">X</p>
-                    <a href="pages/fullscreen-chat.html" id="fullscreen" class="fa fa-external-link"></a>
+                    <a href="/" id="fullscreen" class="fa fa-external-link"></a>
                 </div>
                 <div id="live-chat">
                     <div id="operatorr">
@@ -109,8 +115,7 @@
                     <button class="fa fa-paper-plane-o" id="sender"></button>
                 </form>
             </div>
-
-            <!-- Pop-Up Poll Result -->
+                        <!-- Pop-Up Poll Result -->
             <div id="pop-poll-result">
                 <div id="names">
                     <h3>Ucell</h3>
@@ -137,56 +142,32 @@
     <div id="comments-border">
         <div id="comments">
             <!-- Comments -->
-            <div id="comm">
-                <h2>Ismi</h2>
-                <p>Izoh bildirildi</p>
-            </div>
-            
+            {% for comment in comments %}
+                <div id="comm">
+                    <h2>{{ comment.name }}</h2>
+                    <p>{{ comment.message }}</p>
+                </div>
+            {% empty %}
+                <h1>Kamentariya mavjud emas</h1>
+            {% endfor %}
         </div>
-        <a href="pages/all-comments.html">Barcha izohlar</a>
+        <a href="{% url 'comments' %}">Barcha izohlar</a>
     </div>
 
     <div id="operator-poll-border">
         <!-- Poll -->
-        <form action="" id="operator-poll">
+        <form action="{% url 'home' %}" id="operator-poll" method="POST">
+            {% csrf_token %}
             <label for="operator-poll">Qaysi operatordan foydalanasiz ?</label>
-            <div>
-                <input type="radio" name="oper" id="ucell-o" />
-                <label for="ucell-o">&nbspUcell</label>
-            </div>
-            <div>
-                <input type="radio" name="oper" id="beeline-o" />
-                <label for="beeline-o">&nbspBeeline</label>
-            </div>
-            <div>
-                <input type="radio" name="oper" id="mobiuz-o" />
-                <label for="mobiuz-o">&nbspMOBIUZ</label>
-            </div>
-            <div>
-                <input type="radio" name="oper" id="uzmobile-o" />
-                <label for="uzmobile-o">&nbspUzmobile</label>
-            </div>
-            <div>
-                <input type="radio" name="oper" id="perfectum-o" />
-                <label for="perfectum-o">&nbspPerfectum</label>
-            </div>
-            <div>
-                <input type="radio" name="oper" id="humans-o">
-                <label for="humans-o">&nbspHUMANS</label>
-            </div>
-            <div>
-                <input type="radio" name="oper" id="other-o" />
-                <label for="other-o">&nbspBoshqa / Rouming</label>
-            </div>
+            {% for operator in operators %}
+                <div>
+                    <input type="radio" name="oper" id="ucell-o" value="{{ operator.pk }}"/>
+                    <label for="ucell-o">&nbsp{{ operator.name }}</label>
+                </div>
+            {% endfor %}
             <input type="submit" id="submit-o" value="Ovoz berish" />
             <input type="button" id="result-o" value="Natija" onclick="PollResults()" />
         </form>
     </div>
 
-    <footer>
-        <div id="foot">
-            <h1>Footer Info</h1>
-        </div>
-    </footer>
-</body>
-</html>
+{% endblock content %}

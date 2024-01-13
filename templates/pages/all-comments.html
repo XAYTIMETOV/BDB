@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div id="comments-border">
+        <div id="comments">
+            <!-- Comments -->
+            {% for comment in comments %}
+                <div id="comm">
+                    <h2>
+                        {{ comment.name}}</h2>
+                    <p>{{ comment.message }}</p>
+                </div>
+            {% empty %}
+                <h1>Kamentariyalar mavjud emas</h1>
+            {% endfor %}
+            
+        </div>
+    </div>
+
+{% endblock content %}
