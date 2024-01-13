@@ -35,10 +35,6 @@ function FilterOperator(){
     window.open("pages/by-operator.html", "_self");
 }
 
-function MoreBtnIn(){
-    window.open("pages/article-more.html", "_self");
-}
-
 function MoreBtn(){
     window.open("article-more.html", "_self");
 }

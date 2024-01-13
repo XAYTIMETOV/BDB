@@ -46,21 +46,19 @@
                 <div id="articles-list">
                     <!-- Add Delete -->
                     {% for post in posts %}
-                        <a href="{% url 'post' post.slug %}">
-                            <div id="article-box" onclick="MoreBtnIn()">
-                                <!--  -->
-                                <div id="logo-name">
-                                    <img src="{{ post.operator.photo.url }}" alt="operator logo"/>
-                                    <p>{{ post.operator.name }}</p>
-                                </div>
-                                <!--  -->
-                                <div id="title-info">
-                                    <h3>{{ post.title }}</h3>
-                                    <p>{{ post.body }}</p>
-                                    <a href="/?tag={{ post.tag }}">{{ post.tag }}</a>
-                                </div>
+                        <div id="article-box" onclick="MoreBtnIn({% url 'post' post.slug %})">
+                            <!--  -->
+                            <div id="logo-name">
+                                <img src="{{ post.operator.photo.url }}" alt="operator logo"/>
+                                <p>{{ post.operator.name }}</p>
                             </div>
-                        </a>
+                            <!--  -->
+                            <div id="title-info">
+                                <h3>{{ post.title }}</h3>
+                                <p>{{ post.body }}</p>
+                                <a href="/?tag={{ post.tag }}">{{ post.tag }}</a>
+                            </div>
+                        </div>
                     {% empty %}
                         <h1>Maqolalar mavjud emas</h1>
                     {% endfor %}
@@ -171,3 +169,9 @@
     </div>
 
 {% endblock content %}
+
+{% block script %}
+    function MoreBtnIn(url){
+        window.open(url, "_self");
+    }
+{% endblock script %}
