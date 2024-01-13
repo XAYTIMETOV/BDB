@@ -119,8 +119,87 @@ section{
     word-break: break-all;
 }
 
+#suggests{
+    margin: 0 20px;
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    align-self: center;
+    width: 100%;
+    max-width: 1240px;
+}
+
+#sugg-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 32.5%;
+    min-height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px gray;
+    background-color: white;
+    padding: 10px;
+}
+
+#sugg-logo-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sugg-logo-name img{
+    border: solid 2px;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+}
+
+#sugg-logo-name p{
+    font-size: 15px;
+}
+
+#sugg-title{
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 1300px;
+    align-self: center;
+    padding: 0 40px;
+}
+
+#sugg-title-info p{
+    padding-top: 2px;
+    font-size: 18px;
+    height: 150px;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+#izoh-title{
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1300px;
+    align-self: center;
+    padding: 0 40px;
+}
+
+#sugg-arttic{
+    display: flex;
+    justify-content: space-between;
+}
+
+#sugg-arttic a{
+    font-size: 12px;
+    border: solid 1px;
+    display: flex;
+    align-items: top;
+    padding: 3px 7px;
+    width: fit-content;
+    border-radius: 50px;
+    overflow-y: hidden;
+}
+
 #comments-border{
-    margin: 20px 0;
+    margin: 10px 0 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;    
@@ -151,6 +230,12 @@ section{
     box-shadow: 0 0 2px gray;
     background-color: white;
     padding: 10px;
+    color: black;
+}
+
+#comm:hover{
+    box-shadow: 0 0 5px gray;
+    transform: scale(1.02);
 }
 
 #comm-title{
@@ -188,7 +273,7 @@ section{
 }
 
 
-#comments-border a{
+#all-comms{
     width: 100%;
     max-width: 1240px;
     margin: 10px 0 20px 0;
@@ -200,7 +285,7 @@ section{
     color: black;
 }
 
-#comments-border a:hover{
+#all-comms:hover{
     background-color: royalblue;
     color: white;
     transition: 0.5s;
