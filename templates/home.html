@@ -136,7 +136,7 @@
         <div id="comments">
             <!-- Comments -->
             {% for comment in comments %}
-                <a href="" id="comm">
+                <div id="comm">
                     <div id="comm-title">
                         <h2>{{ comment.name }}</h2>
                         <h5>{{ comment.date|date:"d.m.Y" }}</h5>
@@ -145,7 +145,7 @@
                         <p>{{ comment.message }}</p>
                     </div>
                     <img src="../static/images/user.png" />
-                </a>
+                </div>
             {% empty %}
                 <h1>Kamentariya mavjud emas</h1>
             {% endfor %}
