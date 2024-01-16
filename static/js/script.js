@@ -41,4 +41,5 @@ function MoreBtn(){
 
 function PollResults(){
     document.getElementById("pop-poll-result").style.display = "flex";
+    document.getElementById("operator-poll").style.display = "none";
 }

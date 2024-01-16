@@ -565,10 +565,6 @@ section{
 }
 
 #pop-poll-result{
-    position: absolute;
-    top: 385px;
-    left: 50%;
-    transform: translateX(-50%);
     width: 100%;
     height: 380px;
     max-width: 1240px;
@@ -692,7 +688,8 @@ section{
 
 #operator-poll-border{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 40px;
     padding: 0 25px;
 }
