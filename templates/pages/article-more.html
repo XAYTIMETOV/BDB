@@ -18,14 +18,19 @@
                             <h3>{{ post.title }}</h3>
                             <p>{{ post.body }}</p>
                         </div>
+
+                        <div id="like-print">
+                            <button>♡ Foydali (<span>123</span>)</button>
+<!--                            <button>♥ Foydali (<span>123</span>)</button>-->
+                            <button onclick="window.print(); return false;">☰ Chop qilish</button>
+                        </div>
                     </div>
-                    
                 </div>           
             </div>
         </div>
     </section>
 
-    <h1 id="sugg-title">Tavfsiya qilinganlar</h1>
+    <h1 id="sugg-title"><i class="fa fa-hand-o-right"></i>&nbspTavfsiya qilinganlar</h1>
     <div id="sugg-border">
         <div id="suggests">
             <div id="sugg-box">
@@ -49,7 +54,7 @@
         </div>
     </div>
 
-    <h1 id="izoh-title">Izohlar</h1>
+    <h1 id="izoh-title"><i class="fa fa-pencil-square"></i>&nbspIzohlar</h1>
     <div id="comments-border">
         <div id="comments">
             <!-- Comments -->
@@ -72,7 +77,7 @@
     <div id="add-comment">
         <form action="{% url 'post' post.slug %}" method="post" id="reqform">
             {% csrf_token %}
-            <h1>Fikr bildirish</h1>
+            <h1><i class="fa fa-edit"></i>&nbspFikr bildirish</h1>
             <div id="name-surname">
                 <input type="text" name="name" maxlength="27" placeholder="Ismingiz" required />
                 <input type="email" name="email" maxlength="50" placeholder="Email manzilingiz" required />
