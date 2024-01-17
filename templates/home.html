@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-{% block content %}
+z{% block content %}
     <section>
 
         <!--  -->
         <form action="" id="search">
-            <input type="text" name="q" placeholder="🔍 Nimani qidirmoqchisiz ?" />
+            <input type="text" name="search" placeholder="🔍 Nimani qidirmoqchisiz ?" />
             <button id="search-button" class="fa fa-search"></button>
         </form>
 
@@ -19,7 +19,7 @@
                     {% for operator in operators %}
                         <a id="operator-box" href="/?com={{ operator.name }}" style="border: solid 4px {{ operator.color_column }};">
                             <img src="{{ operator.photo.url }}"  alt="operator logo" />
-                            <h4 style="color: black;">{{ operator.name }}</h4>
+                            <h4 style="color: white;">{{ operator.name }}</h4>
                         </a>
                     {% empty %}
                         <h1>Operatorlar mavjud emas</h1>
@@ -180,4 +180,12 @@
             </script>
         {% endif %}
 
+
+<script>
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.getElementById('hdr').innerHTML='<link id="style" rel="stylesheet" type="text/css" href="'+"static/css/style-dark.css"+'">';
+    }else{
+        document.getElementById('hdr').innerHTML='<link id="style" rel="stylesheet" type="text/css" href="'+"static/css/style.css"+'">';
+    }
+</script>
 {% endblock content %}
