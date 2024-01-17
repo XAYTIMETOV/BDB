@@ -17,7 +17,8 @@
 body{
     display: flex;
     flex-direction: column;
-    background-color: whitesmoke;
+    background-color: black;
+    color: white;
 }
 
 header{
@@ -25,8 +26,8 @@ header{
     display: flex;
     align-items: top;
     justify-content: center;
-    box-shadow: -5px 0 5px gray;
-    background-color: white;
+    box-shadow: -5px 0 5px #2a2a2a;
+    background-color: black;
 }
 
 header a{
@@ -63,8 +64,7 @@ section{
 }
 
 #search input{
-    width: 100%;
-    max-width: 1240px;
+    background: #2a2a2a;
     padding: 0 15px;
     outline: none;
     border: none;
@@ -74,16 +74,18 @@ section{
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
     font-size: 15px;
+    width: 100%;
 }
 
 #search-button{
     width: 40px;
     height: 40px;
     right: 20px;
-    background-color: white;
+    background-color: #2a2a2a;
     border: none;
     outline: none;
     box-shadow: 0 0 2px gray;
+    color: #008cff;
     cursor: pointer;
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
@@ -133,7 +135,7 @@ section{
     min-width: 180px;
     max-height: 120px;
     border-radius: 10px;
-    background-color: white;
+    background-color: #484848;
     cursor: pointer;
 }
 
@@ -202,7 +204,7 @@ section{
     min-height: 250px;
     border-radius: 10px;
     box-shadow: 0 0 2px gray;
-    background-color: white;
+    background-color: #000000;
     padding: 10px;
 }
 
@@ -571,8 +573,8 @@ section{
     max-width: 1240px;
     border-radius: 10px;
     box-shadow: 0 0 2px gray;
-    background-color: white;
-    color: black;
+    background-color: #000000;
+    color: white;
     padding: 20px;
     transform: 0.5s;
     display: none;
@@ -600,8 +602,9 @@ section{
 
 #comments{
     box-shadow: 0 0 2px gray;
-    background-color: white;
+    background-color: #3a3a3a;
     padding: 20px;
+    color: #abdeff;
     border-radius: 10px;
     width: 100%;
     max-width: 1240px;
@@ -620,7 +623,7 @@ section{
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 0 0 2px gray;
-    background-color: white;
+    background-color: #3e3e3e;
     padding: 10px;
     color: black;
 }
@@ -633,6 +636,7 @@ section{
 #comm-title{
     display: flex;
     align-items: center;
+    color: white;
 }
 
 #comm-title h2{
@@ -640,6 +644,7 @@ section{
     font-size: 20px;
     width: 295px;
     overflow-x: hidden;
+    color: white;
 }
 
 #comm-title h5{
@@ -657,6 +662,7 @@ section{
     max-height: 85px;
     overflow-y: hidden;
     margin-right: 10px;
+    color: #9f9e9e;
 }
 
 #comm img{
@@ -676,9 +682,9 @@ section{
     text-align: center;
     padding: 10px 0;
     border-radius: 20px;
-    background-color: white;
+    background-color: #3e3e3e;
     border: solid 1px gray;
-    color: black;
+    color: #ffffff;
 }
 
 #all-comms:hover{
@@ -703,7 +709,7 @@ section{
     box-shadow: 0 0 2px gray;
     border-radius: 10px;
     padding: 15px;
-    background-color: white;
+    background-color: #3e3e3e;
 }
 
 #operator-poll label{
@@ -733,7 +739,7 @@ section{
     width: 100%;
     padding: 10px 0;
     font-size: 15px;
-    background-color: royalblue;
+    background-color: #001242;
     color: white;
     cursor: pointer;
     margin-top: 10px;
@@ -746,8 +752,8 @@ section{
     width: 100%;
     padding: 10px 0;
     font-size: 15px;
-    background-color: white;
-    color: black;
+    background-color: #00153a;
+    color: #ffffff;
     cursor: pointer;
     margin-top: 10px;
     border: solid 1px gray;
@@ -756,7 +762,7 @@ section{
 }
 
 footer{
-    background-color: gray;
+    background-color: #171717;
     color: white;
     display: flex;
     justify-content: center;

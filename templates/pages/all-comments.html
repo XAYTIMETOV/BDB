@@ -26,5 +26,12 @@
 {% endblock content %}
 
 {% block style %}
-<link rel="stylesheet" href="{%static 'css/all-comments.css'%}">
+
+<script>
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.getElementById('hdr').innerHTML='<link id="style" rel="stylesheet" type="text/css" href="'+"../static/css/all-comments-dark.css"+'">';
+    }else{
+        document.getElementById('hdr').innerHTML='<link id="style" rel="stylesheet" type="text/css" href="'+"../static/css/all-comments.css"+'">';
+    }
+</script>
 {% endblock style %}

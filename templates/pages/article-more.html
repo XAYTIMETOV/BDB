@@ -85,5 +85,12 @@
     </div>
 {% endblock content %}
 {% block style %}
-<link rel="stylesheet" href="{%static 'css/article-more.css'%}">
+
+<script>
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.getElementById('hdr').innerHTML='<link id="style" rel="stylesheet" type="text/css" href="'+"../../static/css/article-more-dark.css"+'">';
+    }else{
+        document.getElementById('hdr').innerHTML='<link id="style" rel="stylesheet" type="text/css" href="'+"../../static/css/article-more.css"+'">';
+    }
+</script>
 {% endblock style %}
