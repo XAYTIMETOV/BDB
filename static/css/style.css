@@ -158,6 +158,7 @@ section{
     width: 180px;
     height: 42px;
     text-align: center;
+    color: black;
 }
 
 #ads{
@@ -568,7 +569,6 @@ section{
 
 #pop-poll-result{
     width: 100%;
-    height: 380px;
     max-width: 1240px;
     border-radius: 10px;
     box-shadow: 0 0 2px gray;
@@ -700,7 +700,6 @@ section{
 #operator-poll{
     width: 100%;
     max-width: 1240px;
-    height: 380px;
     border: solid 2p red;
     box-shadow: 0 0 2px gray;
     border-radius: 10px;
