@@ -157,18 +157,18 @@
         </form>
 
         <!-- Pop-Up Poll Result -->
-        <div id="pop-poll-result">
-            <div id="names">
-                {% for operator in operators %}
-                <h3>{{ operator.name }} - {{ operator.votes }} ({{ operator.percentage }}%)</h3>
-                <div style="border: solid 1px {{ operator.color_column }}; width: 100%;">
-                    <div class="ucell" role="progressbar" style="width: {{ operator.percentage }}%; background:  {{ operator.color_column }};" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+            <div id="pop-poll-result">
+                <div id="names">
+                    {% for operator in operators %}
+                        <h3>{{ operator.name }} - {{ operator.votes }} ({{ operator.percentage }}%)</h3>
+                        <div style="border: solid 1px {{ operator.color_column }}; width: 100%;">
+                            <div class="ucell" role="progressbar" style="width: {{ operator.percentage }}%; background:  {{ operator.color_column }};" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    {% endfor %}
+                    <br>
+                    <h3>Ovoz berganlar : <span>{{ total_votes }}</span></h3>
                 </div>
-                {% endfor %}
-                <br>
-                <h3>Ovoz berganlar : <span>{{ total_votes }}</span></h3>
             </div>
-        </div>
     </div>
 
 {% endblock content %}
