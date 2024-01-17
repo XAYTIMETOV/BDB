@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from autoslug import AutoSlugField
+from ckeditor.fields import RichTextField
 
 
 class Post(models.Model):
@@ -24,7 +25,7 @@ class Post(models.Model):
     staff = models.ForeignKey(User, on_delete=models.CASCADE)
     slug = AutoSlugField(populate_from='title')
     title = models.CharField(max_length=255)
-    body = models.TextField()
+    body = RichTextField()
     likes = models.BigIntegerField(default=0)
     date = models.DateTimeField(auto_now_add=True)
     keys = models.TextField(null=True)
