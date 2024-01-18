@@ -15,8 +15,11 @@
                         </div>
                         <!--  -->
                         <div id="title-info">
-                            <h3>{{ post.title }}</h3>
-                            <p>{{ post.body }}</p>
+
+                            <div>
+                                <h3>{{ post.title }}</h3>
+                            </div>
+                            <p>{{ post.body | safe }}</p>
                         </div>
                     </div>
                     
@@ -36,8 +39,12 @@
                 </div>
                 <!--  -->
                 <div id="sugg-title-info">
-                    <h3>{{ post.title }}</h3>
-                    <p>{{ post.body }}</p>
+                    <div>
+                        <h3>{{ post.title }}</h3>
+                    </div>
+                    <p>
+                            {{ post.body | safe}}
+                    </p>
                     <div id="sugg-arttic">
                         <a href="/?tag={{ post.tag }}">{{ post.tag }}</a>
                         <a href="{% url 'post' post.slug %}">Batafsil</a>
@@ -84,13 +91,15 @@
         </form>
     </div>
 {% endblock content %}
-{% block style %}
+{% block script %}
+    <script>
+        let dark = '{% block styledark %} <link id="style" rel="stylesheet" type="text/css" href="{% static 'css/article-more-dark.css' %}"> {% endblock styledark %}">';
+        let light = '{% block style %} <link id="style" rel="stylesheet" type="text/css" href="{% static 'css/article-more.css' %}"> {% endblock style %}">';
 
-<script>
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.getElementById('hdr').innerHTML='<link id="style" rel="stylesheet" type="text/css" href="'+"../../static/css/article-more-dark.css"+'">';
-    }else{
-        document.getElementById('hdr').innerHTML='<link id="style" rel="stylesheet" type="text/css" href="'+"../../static/css/article-more.css"+'">';
-    }
-</script>
-{% endblock style %}
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.getElementById('hdr').innerHTML=dark;
+        }else{
+            document.getElementById('hdr').innerHTML=light;
+        }
+    </script>
+{% endblock script %}

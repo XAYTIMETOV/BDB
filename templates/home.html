@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-z{% block content %}
+{% load static %}
+{% block content %}
     <section>
 
         <!--  -->
@@ -19,7 +20,7 @@ z{% block content %}
                     {% for operator in operators %}
                         <a id="operator-box" href="/?com={{ operator.name }}" style="border: solid 4px {{ operator.color_column }};">
                             <img src="{{ operator.photo.url }}"  alt="operator logo" />
-                            <h4 style="color: white;">{{ operator.name }}</h4>
+                            <h4>{{ operator.name }}</h4>
                         </a>
                     {% empty %}
                         <h1>Operatorlar mavjud emas</h1>
@@ -52,8 +53,10 @@ z{% block content %}
                             </div>
                             <!--  -->
                             <div id="title-info">
-                                <h3>{{ post.title }}</h3>
-                                <p>{{ post.body }}</p>
+                                <div>
+                                    <h3>{{ post.title }}</h3>
+                                </div>
+                                <p>{{ post.body | safe}}</p>
                                 <div id="arttic">
                                     <a href="/?tag={{ post.tag }}">{{ post.tag }}</a>
                                     <a href="{% url 'post' post.slug %}">Batafsil</a>
@@ -182,10 +185,12 @@ z{% block content %}
 
 
 <script>
+    let dark = '{% block styledark %} <link id="style" rel="stylesheet" type="text/css" href="{% static 'css/style-dark.css' %}"> {% endblock styledark %}">';
+    let light = '{% block style %} <link id="style" rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> {% endblock style %}">';
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.getElementById('hdr').innerHTML='<link id="style" rel="stylesheet" type="text/css" href="'+"static/css/style-dark.css"+'">';
+        document.getElementById('hdr').innerHTML=dark;
     }else{
-        document.getElementById('hdr').innerHTML='<link id="style" rel="stylesheet" type="text/css" href="'+"static/css/style.css"+'">';
+        document.getElementById('hdr').innerHTML=light;
     }
 </script>
 {% endblock content %}
