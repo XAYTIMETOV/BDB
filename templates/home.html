@@ -17,7 +17,7 @@
                 <div id="operators-list">
                     <!-- Operator Boxs -->
                     {% for operator in operators %}
-                        <a id="operator-box" href="/?com={{ operator.name }}" style="border: solid 4px  {{ operator.color_column }};">
+                        <a id="operator-box" href="/?com={{ operator.name }}" style="border: solid 4px {{ operator.color_column }};">
                             <img src="{{ operator.photo.url }}"  alt="operator logo" />
                             <h4 style="color: black;">{{ operator.name }}</h4>
                         </a>
@@ -148,8 +148,8 @@
             <label for="operator-poll">Qaysi operatordan foydalanasiz ?</label>
             {% for operator in operators %}
                 <div>
-                    <input type="radio" name="oper" id="ucell-o" value="{{ operator.pk }}"/>
-                    <label for="ucell-o">&nbsp{{ operator.name }}</label>
+                    <input type="radio" name="oper" id="{{ operator.name }}-o" value="{{ operator.pk }}"/>
+                    <label for="{{ operator.name }}-o">&nbsp{{ operator.name }}</label>
                 </div>
             {% endfor %}
             <input type="submit" id="submit-o" value="Ovoz berish" />
@@ -170,5 +170,14 @@
             </div>
         </div>
     </div>
+        {% if vote %}
+            <script>
+                PollResults()
+            </script>
+        {% elif request.COOKIES.vote == 'true' %}
+            <script>
+                PollResults()
+            </script>
+        {% endif %}
 
 {% endblock content %}

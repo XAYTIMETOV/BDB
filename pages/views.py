@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from posts.models import Post
@@ -9,12 +10,6 @@ from django.db.models import Sum
 
 
 def home(request):
-    if request.method == 'POST':
-        oper = request.POST.get('oper')
-        operator = get_object_or_404(Operator, pk=oper)
-        operator.votes += 1
-        operator.save()
-
     query = request.GET.get('q')
     tag = request.GET.get('tag')
     company = request.GET.get('com')
@@ -57,7 +52,19 @@ def home(request):
         'total_votes': total_votes,
     }
 
-    return render(request, 'home.html', context)
+
+    if request.method == 'POST':
+        oper = request.POST.get('oper')
+        operator = get_object_or_404(Operator, pk=oper)
+        operator.votes += 1
+        operator.save()
+        context['vote'] = True
+        response = render(request, 'home.html', context)
+        response.set_cookie('vote', 'true')
+        return response
+
+    response = render(request, 'home.html', context)
+    return response
 
 def all_comments(request):
     comments = Comment.objects.all()
