@@ -382,3 +382,57 @@ footer{
         visibility: hidden;
     }
 }
+
+@media screen and (max-width: 428px){
+    header{
+        height: 60px;
+    }
+
+    header a img{
+        width: 250px;
+        height: 40px;
+    }
+
+    #articles-title h3{
+        font-size: 12px;
+    }
+
+    #article-box{
+        width: 100%;
+        min-width: 50px;
+    }
+
+    #logo-name img{
+        width: 26px;
+        height: 26px;
+    }
+
+    #logo-name p{
+        font-size: 12px;
+    }
+
+    #title-info h3{
+        font-size: 14px;
+    }
+
+    #title-info p{
+        font-size: 12px;
+    }
+
+    #title-info #arttic a{
+        font-size: 8px;
+    }
+
+    #comments h1{
+        font-size: 15px;
+    }
+
+    #all-comms{
+        padding: 5px 0;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 320px){
+
+}

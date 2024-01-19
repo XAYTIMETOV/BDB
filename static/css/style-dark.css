@@ -804,8 +804,8 @@ footer{
     }
 
     header a img{
-        width: 350px;
-        height: 50px;
+        width: 250px;
+        height: 40px;
     }
 
     #search{
@@ -823,7 +823,7 @@ footer{
     }
 
     #operators-title h3{
-        font-size: 12px;
+        font-size: 18px;
     }
 
     #operators-list{
@@ -848,7 +848,7 @@ footer{
     }
 
     #articles-title h3{
-        font-size: 12px;
+        font-size: 18px;
     }
 
     #article-box{
