@@ -49,6 +49,7 @@ header a img{
 section{
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: relative;
     padding: 40px 25px;
     width: 100%;
@@ -58,8 +59,8 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 82%;
-    margin-left: 9%;
+    width: 100%;
+    max-width: 1240px;
     border-radius: 100px;
 }
 
@@ -68,6 +69,7 @@ section{
     padding: 0 15px;
     outline: none;
     border: none;
+    color: white;
     box-shadow: 0 0 2px gray;
     height: 40px;
     letter-spacing: 1px;
@@ -569,7 +571,6 @@ section{
 
 #pop-poll-result{
     width: 100%;
-    height: 380px;
     max-width: 1240px;
     border-radius: 10px;
     box-shadow: 0 0 2px gray;
@@ -704,7 +705,6 @@ section{
 #operator-poll{
     width: 100%;
     max-width: 1240px;
-    height: 380px;
     border: solid 2p red;
     box-shadow: 0 0 2px gray;
     border-radius: 10px;

@@ -78,6 +78,20 @@ section{
     padding: 10px;
 }
 
+#like-print{
+    display: flex;
+    gap: 15px;
+}
+
+#like-print button{
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: none;
+}
+
 #logo-name{
     display: flex;
     align-items: center;
@@ -359,4 +373,18 @@ footer{
 #foot{
     padding: 10px 20px;
     width: 1200px;
+}
+
+@media print{
+    body{
+        visibility: hidden;
+    }
+
+    #article-box{
+        visibility: visible;
+    }
+
+    #like-print{
+        visibility: hidden;
+    }
 }
