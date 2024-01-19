@@ -130,9 +130,8 @@ section{
     align-items: center;
     justify-content: center;
     width: 18%;
+    min-width: 120px;
     height: 120px;
-    min-width: 180px;
-    max-height: 120px;
     border-radius: 10px;
     background-color: white;
     cursor: pointer;
@@ -788,5 +787,134 @@ footer{
 
     #articles-list{
         max-height: 3500px;
+    }
+}
+
+@media screen and (max-width: 428px){
+    header{
+        height: 60px;
+    }
+
+    header a img{
+        width: 350px;
+        height: 50px;
+    }
+
+    #search{
+        height: 20px;
+    }
+
+    #search input{
+        height: 26px;
+        font-size: 12px;
+    }
+
+    #search button{
+        width: 26px;
+        height: 26px;
+    }
+
+    #operators-title h3{
+        font-size: 12px;
+    }
+
+    #operators-list{
+        overflow: visible;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    #operator-box{
+        width: 48%;
+        min-width: 100px;
+        height: 80px;
+    }
+
+    #operator-box img{
+        width: 20px;
+        height: 20px;
+    }
+
+    #operator-box h4{
+        font-size: 10px;
+    }
+
+    #articles-title h3{
+        font-size: 12px;
+    }
+
+    #article-box{
+        width: 100%;
+        min-width: 50px;
+    }
+
+    #logo-name img{
+        width: 26px;
+        height: 26px;
+    }
+
+    #logo-name p{
+        font-size: 12px;
+    }
+
+    #title-info h3{
+        font-size: 14px;
+    }
+
+    #title-info p{
+        font-size: 12px;
+    }
+
+    #title-info #arttic a{
+        font-size: 8px;
+    }
+
+    .current h1{
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 8px;
+    }
+
+    #comments h1{
+        font-size: 15px;
+    }
+
+    #all-comms{
+        padding: 5px 0;
+        font-size: 10px;
+    }
+
+    #operator-poll label{
+        font-size: 18px;
+    }
+
+    #operator-poll div input{
+        width: 14px;
+        height: 14px;
+    }
+
+    #operator-poll div label{
+        font-size: 12px;
+    }
+
+    #submit-o{
+        font-size: 12px;
+        padding: 7px 0;
+    }
+
+    #result-o{
+        padding: 7px 0;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    #operator-box{
+        width: 98%;
+        min-width: 100px;
+        height: 80px;
     }
 }
