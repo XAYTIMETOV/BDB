@@ -30,6 +30,7 @@ class Post(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     keys = models.TextField(null=True)
 
+
     def __str__(self):
         """
         Returns a string representation of the post.

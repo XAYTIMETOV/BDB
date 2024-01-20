@@ -25,7 +25,7 @@ def home(request):
         )
     else:
         posts = Post.objects.all()
-    paginator = Paginator(posts, 1)
+    paginator = Paginator(posts, 12)
 
     page_number = request.GET.get("page")
     posts = paginator.get_page(page_number)
