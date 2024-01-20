@@ -368,3 +368,17 @@ footer{
     padding: 10px 20px;
     width: 1200px;
 }
+
+@media print{
+    body{
+        visibility: hidden;
+    }
+
+    #article-box{
+        visibility: visible;
+    }
+
+    #like-print{
+        visibility: hidden;
+    }
+}
