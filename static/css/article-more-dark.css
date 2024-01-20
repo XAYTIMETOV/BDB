@@ -79,6 +79,21 @@ section{
     padding: 10px;
 }
 
+#like-print{
+    display: flex;
+    gap: 15px;
+}
+
+#like-print button{
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: none;
+}
+
 #logo-name{
     display: flex;
     align-items: center;

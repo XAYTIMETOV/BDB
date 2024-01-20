@@ -84,6 +84,7 @@ section{
 }
 
 #like-print button{
+    color: black;
     padding: 5px;
     border-radius: 10px;
     border: none;
