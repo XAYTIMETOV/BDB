@@ -47,9 +47,9 @@
                     <div>
                         <h3>{{ post.title }}</h3>
                     </div>
-                    <p>
-                            {{ post.body | safe}}
-                    </p>
+                    <div id="sugg-title-body">
+                        {{ post.body | safe }}
+                    </div>
                     <div id="sugg-arttic">
                         <a href="/?tag={{ post.tag }}">{{ post.tag }}</a>
                         <a href="{% url 'post' post.slug %}">Batafsil</a>

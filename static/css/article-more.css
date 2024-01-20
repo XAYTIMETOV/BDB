@@ -187,13 +187,6 @@ section{
     padding: 0 40px;
 }
 
-#sugg-title-info p{
-    padding-top: 2px;
-    font-size: 18px;
-    height: 150px;
-    overflow: hidden;
-    word-break: break-all;
-}
 
 #izoh-title{
     margin-top: 20px;
