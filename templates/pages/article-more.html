@@ -48,7 +48,7 @@
                         <h3>{{ post.title }}</h3>
                     </div>
                     <div id="sugg-title-body">
-                        {{ post.body | safe }}
+                        {{ post.body | truncatechars_html:150 | safe }}
                     </div>
                     <div id="sugg-arttic">
                         <a href="/?tag={{ post.tag }}">{{ post.tag }}</a>
