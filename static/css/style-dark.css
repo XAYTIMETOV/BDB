@@ -621,7 +621,7 @@ section{
     display: flex;
     flex-direction: column;
     width: 32.4%;
-    min-width: 350px;
+    min-width: 0px;
     max-height: 300px;
     overflow: hidden;
     border-radius: 5px;
@@ -664,7 +664,7 @@ section{
     max-width: 340px;
     max-height: 85px;
     overflow-y: hidden;
-    margin-right: 10px;
+    margin-right: 35px;
     color: #9f9e9e;
 }
 
@@ -788,13 +788,193 @@ footer{
     }
 }
 
-@media screen and (max-width: 774px) {
+@media screen and (max-width: 1149px){
+    #comm{
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 849px) {
     #article-box{
         width: 100%;
     }
 
     #articles-list{
         max-height: 3500px;
+    }
+
+    #comm-title h2{
+        font-size: 14px;
+    }
+
+    #comm-title h5{
+        font-size: 14px;
+    }
+
+    #comm-msg p{
+        font-size: 12px;
+    }
+
+    #comm img{
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media screen and (max-width: 828px){
+    #comm{
+        width: 100%;
+    }
+
+    #comm-title h2{
+        font-size: 14px;
+    }
+
+    #comm-title h5{
+        font-size: 14px;
+    }
+
+    #comm-msg p{
+        font-size: 12px;
+    }
+
+    #comm img{
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media screen and (max-width: 725px){
+    header{
+        height: 80px;
+    }
+
+    header a img{
+        width: 400px;
+        height: 60px;
+    }
+
+    #operators-title h3{
+        font-size: 18px;
+    }
+
+    #operators-list{
+        overflow: visible;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    #operator-box{
+        width: 48%;
+        min-width: 100px;
+        height: 80px;
+    }
+
+    #operator-box img{
+        width: 20px;
+        height: 20px;
+    }
+
+    #operator-box h4{
+        font-size: 10px;
+    }
+
+    #articles-title h3{
+        font-size: 18px;
+    }
+
+    #article-box{
+        width: 100%;
+        min-width: 50px;
+        min-height: 80px;
+    }
+
+    #logo-name img{
+        width: 26px;
+        height: 26px;
+    }
+
+    #logo-name p{
+        font-size: 12px;
+    }
+
+    #title-info h3{
+        font-size: 14px;
+    }
+
+    #title-info p{
+        font-size: 12px;
+    }
+
+    #title-info #arttic a{
+        font-size: 8px;
+    }
+
+    .step-links a{
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 8px;
+    }
+
+    .current h1{
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 8px;
+    }
+
+    #comments h1{
+        font-size: 15px;
+    }
+
+    #all-comms{
+        padding: 5px 0;
+        font-size: 10px;
+    }
+
+    #operator-poll label{
+        font-size: 18px;
+    }
+
+    #operator-poll div input{
+        width: 14px;
+        height: 14px;
+    }
+
+    #operator-poll div label{
+        font-size: 12px;
+    }
+
+    #submit-o{
+        font-size: 12px;
+        padding: 7px 0;
+    }
+
+    #result-o{
+        padding: 7px 0;
+        font-size: 12px;
+    }
+
+    #comm-title h2{
+        font-size: 14px;
+    }
+
+    #comm-title h5{
+        font-size: 14px;
+    }
+
+    #comm-msg p{
+        font-size: 12px;
+    }
+
+    #comm img{
+        width: 15px;
+        height: 15px;
     }
 }
 
@@ -854,6 +1034,7 @@ footer{
     #article-box{
         width: 100%;
         min-width: 50px;
+        min-height: 80px;
     }
 
     #logo-name img{
@@ -917,12 +1098,55 @@ footer{
         padding: 7px 0;
         font-size: 12px;
     }
+
+    #comm{
+        min-width: 100%;
+    }
+
+    #comm-title h2{
+        font-size: 14px;
+    }
+
+    #comm-title h5{
+        font-size: 14px;
+    }
+
+    #comm-msg p{
+        font-size: 12px;
+    }
+
+    #comm img{
+        width: 15px;
+        height: 15px;
+    }
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 321px){
     #operator-box{
         width: 98%;
         min-width: 100px;
         height: 80px;
     }
+
+    #comm{
+        min-width: 100%;
+    }
+
+    #comm-title h2{
+        font-size: 14px;
+    }
+
+    #comm-title h5{
+        font-size: 14px;
+    }
+
+    #comm-msg p{
+        font-size: 12px;
+    }
+
+    #comm img{
+        width: 15px;
+        height: 15px;
+    }
 }
+
