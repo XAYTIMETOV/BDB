@@ -29,7 +29,6 @@ def home(request):
 
     page_number = request.GET.get("page")
     posts = paginator.get_page(page_number)
-
     # Retrieve all comments
     comments = Comment.objects.all().order_by('-date')[:6]
 

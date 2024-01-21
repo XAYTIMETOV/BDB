@@ -42,4 +42,32 @@
     {% block script %}
     {% endblock script %}
 </body>
+<script src="{% static 'js/sweetalert2.js' %}"></script>
+<script>
+    let PlayStoreUrl="";
+    let AppStoreUrl="";
+    let timer=5;
+    Swal.fire({
+        html: `
+         <div style="background-image: url('static/images/advertising.png'); background-size: cover; height: 670px; position: relative;">
+          <div style="position: absolute; bottom: 10px; left: 10px; text-align: left;">
+            <a href="${PlayStoreUrl}" target="_blank">
+              <img src="static/images/PlayStore.png" alt="Play Market" style="width: 45%; margin-right: 5px;">
+            </a>
+            <a href="${AppStoreUrl}" target="_blank">
+              <img src="static/images/AppStore.png" alt="App Store" style="width: 45%; margin-right: 5px;">
+            </a>
+          </div>
+        </div>
+        `,
+        width: "350px",
+        background: "blue",
+        showCloseButton: true,
+        showConfirmButton: false,
+    });
+
+setTimeout(function() {
+  Swal.close();
+}, timer*1000);
+</script>
 </html>
