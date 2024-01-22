@@ -188,6 +188,9 @@ section{
     padding: 0 40px;
 }
 
+#sugg-title-body p{
+    padding-bottom: 20px;
+}
 
 #izoh-title{
     margin-top: 20px;

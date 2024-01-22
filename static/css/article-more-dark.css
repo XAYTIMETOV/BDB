@@ -190,6 +190,12 @@ section{
     padding: 0 40px;
 }
 
+#sugg-title-body p{
+    max-height:150px;
+    overflow-y: hidden;
+    margin-bottom: 40px;
+}
+
 #izoh-title{
     margin-top: 20px;
     width: 100%;
