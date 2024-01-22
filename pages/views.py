@@ -86,8 +86,13 @@ def post(request, slug):
         ).save()
     post = get_object_or_404(Post, slug=slug)
 
+    all_posts = Post.objects.all()
+
+    similar_posts = Post.find_similar_posts(post, all_posts, n=4)
+
     context = {
         'post': post,
+        'similar_posts': similar_posts,
     }
 
     return render(request, 'pages/article-more.html', context)

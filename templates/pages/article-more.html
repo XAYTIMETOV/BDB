@@ -36,28 +36,28 @@
     <h1 id="sugg-title"><i class="fa fa-hand-o-right"></i>&nbspTavfsiya qilinganlar</h1>
     <div id="sugg-border">
         <div id="suggests">
-            <div id="sugg-box">
+            {% for similar_post in similar_posts %}
+                <div id="sugg-box">
                 <!--  -->
                 <div id="sugg-logo-name">
-                    <img src="{{ post.operator.photo.url }}" alt="operator logo"/>
-                    <p>{{ post.operator.name }}</p>
+                    <img src="{{ similar_post.operator.photo.url }}" alt="operator logo"/>
+                    <p>{{ similar_post.operator.name }}</p>
                 </div>
                 <!--  -->
                 <div id="sugg-title-info">
                     <div>
-                        <h3>{{ post.title }}</h3>
+                        <h3>{{ similar_post.title }}</h3>
                     </div>
                     <div id="sugg-title-body">
-                        {{ post.body | truncatechars_html:150 | safe }}
+                        {{ similar_post.body | truncatechars_html:150 | safe }}
                     </div>
                     <div id="sugg-arttic">
-                        <a href="/?tag={{ post.tag }}">{{ post.tag }}</a>
-                        <a href="{% url 'post' post.slug %}">Batafsil</a>
+                        <a href="/?tag={{ post.tag }}">{{ similar_post.tag }}</a>
+                        <a href="{% url 'post' similar_post.slug %}">Batafsil</a>
                     </div>
                 </div>
             </div>
-            
-            </div>
+            {% endfor %}
         </div>
     </div>
 
