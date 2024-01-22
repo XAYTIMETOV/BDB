@@ -131,7 +131,7 @@
                     {% for operator in operators %}
                         <h3>{{ operator.name }} - {{ operator.votes }} ({{ operator.percentage }}%)</h3>
                         <div style="border: solid 1px {{ operator.color_column }}; width: 100%;">
-                            <div class="ucell" role="progressbar" style="width: {{ operator.percentage }}%; background:  {{ operator.color_column }};" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="ucell" role="progressbar" style="width: {{ operator.percentage }}%; height: 9px; background:  {{ operator.color_column }};" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     {% endfor %}
                     <br>
