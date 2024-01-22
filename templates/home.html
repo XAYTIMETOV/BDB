@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load poll_extras %}
 {% load static %}
 {% block content %}
     <section>
 
         <!--  -->
         <form action="" id="search">
-            <input type="text" name="search" placeholder="🔍 Nimani qidirmoqchisiz ?" />
+            <input type="text" name="search" placeholder="🔍 {{ 'Nimani qidirmoqchisiz'|trans_text:LANGUAGE_CODE }} ?" />
             <button id="search-button" class="fa fa-search"></button>
         </form>
 
@@ -13,7 +14,7 @@
         <div id="oper-border">
             <div id="operators">
                 <div id="operators-title">
-                    <h3><i class="fa fa-headphones"></i>&nbspAloqa operatorlari</h3>
+                    <h3><i class="fa fa-headphones"></i>&nbsp{{ 'Aloqa operatorlari'|trans_text:LANGUAGE_CODE }}</h3>
                 </div>
                 <div id="operators-list">
                     <!-- Operator Boxs -->
@@ -23,7 +24,7 @@
                             <h4>{{ operator.name }}</h4>
                         </a>
                     {% empty %}
-                        <h1>Operatorlar mavjud emas</h1>
+                        <h1>{{ 'Operatorlar mavjud emas'|trans_text:LANGUAGE_CODE }}</h1>
                     {% endfor %}
                 </div>
             </div>
@@ -39,7 +40,7 @@
             <div id="articles">
                 <!-- Article Title -->
                 <div id="articles-title">
-                    <h3><i class="fa fa-refresh"></i></i>&nbspSo'nggi Maqolalar</h3>
+                    <h3><i class="fa fa-refresh"></i></i>&nbsp{{ 'So`nggi Maqolalar'|trans_text:LANGUAGE_CODE }}</h3>
                 </div>
                 <!-- All Articles -->
                 <div id="articles-list">
@@ -54,17 +55,17 @@
                             <!--  -->
                             <div id="title-info">
                                 <div>
-                                    <h3>{{ post.title }}</h3>
+                                    <h3>{{ post.title|trans_text:LANGUAGE_CODE }}</h3>
                                 </div>
-                                <p>{{ post.body|truncatechars_html:50|safe}}</p>
+                                <p>{{ post.body|truncatechars_html:50|safe|trans_html:LANGUAGE_CODE|safe }}</p>
                                 <div id="arttic">
                                     <a href="/?tag={{ post.tag }}">{{ post.tag }}</a>
-                                    <a href="{% url 'post' post.slug %}">Batafsil</a>
+                                    <a href="{% url 'pages:post' post.slug %}">{{ 'Batafsil'|trans_text:LANGUAGE_CODE}}</a>
                                 </div>
                             </div>
                         </div>
                     {% empty %}
-                        <h1>Maqolalar mavjud emas</h1>
+                        <h1>{{ 'Maqolalar mavjud emas'|trans_text:LANGUAGE_CODE}}</h1>
                     {% endfor %}
                 </div>           
                 <div class="pagination">
@@ -104,25 +105,25 @@
                     <img src="../static/images/user.png" />
                 </div>
             {% empty %}
-                <h1>Kamentariya mavjud emas</h1>
+                <h1>{{ 'Kamentariya mavjud emas'|trans_text:LANGUAGE_CODE}}</h1>
             {% endfor %}
         </div>
-        <a href="{% url 'comments' %}" id="all-comms">Barcha izohlar</a>
+        <a href="{% url 'pages:comments' %}" id="all-comms">{{ 'Barcha izohlar'|trans_text:LANGUAGE_CODE}}</a>
     </div>
 
     <div id="operator-poll-border">
         <!-- Poll -->
-        <form action="{% url 'home' %}" id="operator-poll" method="POST">
+        <form action="{% url 'pages:home' %}" id="operator-poll" method="POST">
             {% csrf_token %}
-            <label for="operator-poll">Qaysi operatordan foydalanasiz ?</label>
+            <label for="operator-poll">{{ 'Qaysi operatordan foydalanasiz'|trans_text:LANGUAGE_CODE}} ?</label>
             {% for operator in operators %}
                 <div>
                     <input type="radio" name="oper" id="{{ operator.name }}-o" value="{{ operator.pk }}"/>
                     <label for="{{ operator.name }}-o">&nbsp{{ operator.name }}</label>
                 </div>
             {% endfor %}
-            <input type="submit" id="submit-o" value="Ovoz berish" />
-            <input type="button" id="result-o" value="Natija" onclick="PollResults()" />
+            <input type="submit" id="submit-o" value="{{ 'Ovoz berish'|trans_text:LANGUAGE_CODE}}" />
+            <input type="button" id="result-o" value="{{ 'Natija'|trans_text:LANGUAGE_CODE}}" onclick="PollResults()" />
         </form>
 
         <!-- Pop-Up Poll Result -->
@@ -135,7 +136,7 @@
                         </div>
                     {% endfor %}
                     <br>
-                    <h3>Ovoz berganlar : <span>{{ total_votes }}</span></h3>
+                    <h3>{{ 'Ovoz berganlar'|trans_text:LANGUAGE_CODE}} : <span>{{ total_votes }}</span></h3>
                 </div>
             </div>
     </div>

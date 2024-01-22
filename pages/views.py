@@ -5,6 +5,9 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 from django.db.models import Sum
 from django.utils.translation import gettext as _
+from django.utils.translation import get_language, activate, gettext
+
+from googletrans import Translator
 
 from posts.models import Post
 from comments.models import Comment
@@ -65,8 +68,6 @@ def home(request):
         response.set_cookie('vote', 'true')
         return response
 
-    trans = _("You have voted")
-    context['trans'] = trans
     response = render(request, 'home.html', context)
     return response
 
