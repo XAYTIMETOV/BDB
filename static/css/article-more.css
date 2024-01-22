@@ -383,6 +383,17 @@ footer{
     }
 }
 
+@media screen and (max-width: 700px){
+    header{
+        height: 90px;
+    }
+
+    header a img{
+        width: 400px;
+        height: 70px;
+    }
+}
+
 @media screen and (max-width: 428px){
     header{
         height: 60px;
@@ -430,6 +441,14 @@ footer{
     #all-comms{
         padding: 5px 0;
         font-size: 10px;
+    }
+
+    #sugg-title{
+        font-size: 18px;
+    }
+
+    #sugg-box{
+        width: 100%;
     }
 }
 
