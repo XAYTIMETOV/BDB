@@ -91,3 +91,10 @@ class Post(models.Model):
             # If a UNIQUE constraint failed (duplicate slug), handle it here
             self.slug = f"{self.slug}-duplicate"  # Modify the slug (append '-duplicate')
             super().save(*args, **kwargs)
+
+    def like(self):
+        """
+        Increments the number of likes for the post.
+        """
+        self.likes += 1
+        self.save()

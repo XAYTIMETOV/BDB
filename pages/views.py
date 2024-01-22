@@ -1,12 +1,14 @@
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import JsonResponse
 from django.core.paginator import Paginator
+from django.db.models import Q
+from django.db.models import Sum
+
 from posts.models import Post
 from comments.models import Comment
 from votes.models import Vote
 from operators.models import Operator
-from django.db.models import Q
-from django.db.models import Sum
 
 
 def home(request):
@@ -84,6 +86,7 @@ def post(request, slug):
             email=request.POST.get('email'),
             message=request.POST.get('commentary')
         ).save()
+
     post = get_object_or_404(Post, slug=slug)
 
     all_posts = Post.objects.all()
@@ -96,3 +99,14 @@ def post(request, slug):
     }
 
     return render(request, 'pages/article-more.html', context)
+
+def like_post(request, slug):
+    """
+    View function to handle liking a post.
+    Assumes you have a URL pattern like '/like_post/<int:slug>/' in your urls.py.
+    """
+    if request.method == 'GET':
+        post = get_object_or_404(Post, slug=slug)
+
+        post.like()
+    return redirect('post', slug=slug)
