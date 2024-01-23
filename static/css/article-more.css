@@ -455,6 +455,49 @@ footer{
     }
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 1279px){
+    #sugg-box{
+        width: 49%;
+    }
+}
 
+@media screen and (max-width: 725px) {
+    header {
+        height: 80px;
+    }
+
+    header a img {
+        width: 400px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    header {
+        height: 60px;
+    }
+
+    header a img {
+        width: 250px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 828px){
+    h1{
+        font-size: 20px;
+    }
+
+    h3{
+        font-size: 18px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+
+    #sugg-box{
+        width: 100%;
+        min-width: 0;
+    }
 }

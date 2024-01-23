@@ -115,7 +115,7 @@ section{
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-height: 200px;
+
     padding: 5px;
     word-break: break-all;
 }
@@ -130,8 +130,6 @@ section{
 #title-info p{
     padding-top: 2px;
     font-size: 18px;
-    height: 120px;
-    overflow: hidden;
     word-break: break-all;
 }
 
@@ -147,6 +145,7 @@ section{
     background-color: #3e3e3e;
     padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     width: 100%;
     max-width: 1240px;
@@ -157,7 +156,7 @@ section{
     display: flex;
     flex-direction: column;
     width: 32.5%;
-    min-width: 250px;
+    min-width: 350px;
     min-height: 250px;
     border-radius: 10px;
     box-shadow: 0 0 2px gray;
@@ -482,6 +481,49 @@ footer{
     }
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 725px) {
+    header {
+        height: 80px;
+    }
 
+    header a img {
+        width: 400px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    header {
+        height: 60px;
+    }
+
+    header a img {
+        width: 250px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 1279px){
+    #sugg-box{
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 828px){
+    h1{
+        font-size: 20px;
+    }
+
+    h3{
+        font-size: 18px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+
+    #sugg-box{
+        width: 100%;
+        min-width: 0;
+    }
 }

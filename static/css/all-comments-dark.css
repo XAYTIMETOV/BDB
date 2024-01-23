@@ -194,3 +194,37 @@ footer{
     width: 1200px;
 
 }
+
+@media screen and (max-width: 725px) {
+    header {
+        height: 80px;
+    }
+
+    header a img {
+        width: 400px;
+        height: 60px;
+    }
+
+    h1{
+        font-size: 20px;
+    }
+
+    h2{
+        font-size: 18px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    header {
+        height: 60px;
+    }
+
+    header a img {
+        width: 250px;
+        height: 40px;
+    }
+}
