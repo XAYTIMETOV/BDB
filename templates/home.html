@@ -19,7 +19,7 @@
                 <div id="operators-list">
                     <!-- Operator Boxs -->
                     {% for operator in operators %}
-                        <a id="operator-box" href="/?com={{ operator.name }}" style="border: solid 4px {{ operator.color_column }};">
+                        <a id="operator-box" href="?com={{ operator.name }}" style="border: solid 4px {{ operator.color_column }};">
                             <img src="{{ operator.photo.url }}"  alt="operator logo" />
                             <h4>{{ operator.name }}</h4>
                         </a>
@@ -59,7 +59,7 @@
                                 </div>
                                 <p>{{ post.body|truncatechars_html:50|safe|trans_html:LANGUAGE_CODE|safe }}</p>
                                 <div id="arttic">
-                                    <a href="/?tag={{ post.tag }}">{{ post.tag }}</a>
+                                    <a href="?tag={{ post.tag }}">{{ post.tag }}</a>
                                     <a href="{% url 'pages:post' post.slug %}">{{ 'Batafsil'|trans_text:LANGUAGE_CODE}}</a>
                                 </div>
                             </div>

@@ -112,4 +112,4 @@ def like_post(request, slug):
         post = get_object_or_404(Post, slug=slug)
 
         post.like()
-    return redirect('post', slug=slug)
+    return redirect('pages:post', slug=slug)
