@@ -115,7 +115,6 @@ section{
     display: flex;
     flex-direction: column;
     width: 100%;
-
     padding: 5px;
     word-break: break-all;
 }
@@ -162,6 +161,7 @@ section{
     box-shadow: 0 0 2px gray;
     background-color: #001242;
     padding: 10px;
+    overflow-y: hidden;
 }
 
 #sugg-logo-name{
@@ -209,18 +209,20 @@ section{
     position: absolute;
     bottom: 10px;
     left: 10px;
-    width: 90%;
+    width: 95%;
 }
 
 #sugg-arttic a{
     font-size: 12px;
     border: solid 1px;
     display: flex;
-    align-items: top;
+    align-items: center;
+    justify-content: center;
     padding: 3px 7px;
     width: fit-content;
     border-radius: 50px;
     overflow-y: hidden;
+    color: white;
 }
 
 #comments-border{

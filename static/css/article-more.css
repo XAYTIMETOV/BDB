@@ -114,7 +114,6 @@ section{
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-height: 200px;
     padding: 5px;
     word-break: break-all;
 }
@@ -129,8 +128,6 @@ section{
 #title-info p{
     padding-top: 2px;
     font-size: 18px;
-    height: 120px;
-    overflow: hidden;
     word-break: break-all;
 }
 
@@ -146,6 +143,7 @@ section{
     background-color: white;
     padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     width: 100%;
     max-width: 1240px;
@@ -156,11 +154,13 @@ section{
     display: flex;
     flex-direction: column;
     width: 32.5%;
+    min-width: 350px;
     height: 250px;
     border-radius: 10px;
     box-shadow: 0 0 2px gray;
     background-color: white;
     padding: 10px;
+    overflow-y: hidden;
 }
 
 #sugg-logo-name{
@@ -189,7 +189,9 @@ section{
 }
 
 #sugg-title-body p{
-    padding-bottom: 20px;
+    max-height:150px;
+    overflow-y: hidden;
+    margin-bottom: 40px;
 }
 
 #izoh-title{
@@ -203,17 +205,23 @@ section{
 #sugg-arttic{
     display: flex;
     justify-content: space-between;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 95%;
 }
 
 #sugg-arttic a{
     font-size: 12px;
     border: solid 1px;
     display: flex;
-    align-items: top;
+    align-items: center;
+    justify-content: center;
     padding: 3px 7px;
     width: fit-content;
     border-radius: 50px;
     overflow-y: hidden;
+    color: black;
 }
 
 #comments-border{
@@ -386,6 +394,12 @@ footer{
     }
 }
 
+@media screen and (max-width: 794px){
+    #comm{
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 700px){
     header{
         height: 90px;
@@ -398,6 +412,11 @@ footer{
 }
 
 @media screen and (max-width: 428px){
+    #comm{
+        width: 100%;
+        min-width: 250px;
+    }
+
     header{
         height: 60px;
     }
@@ -455,12 +474,6 @@ footer{
     }
 }
 
-@media screen and (max-width: 1279px){
-    #sugg-box{
-        width: 49%;
-    }
-}
-
 @media screen and (max-width: 725px) {
     header {
         height: 80px;
@@ -480,6 +493,12 @@ footer{
     header a img {
         width: 250px;
         height: 40px;
+    }
+}
+
+@media screen and (max-width: 1279px){
+    #sugg-box{
+        width: 49%;
     }
 }
 

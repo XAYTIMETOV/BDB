@@ -262,6 +262,7 @@ section{
     width: fit-content;
     border-radius: 50px;
     overflow-y: hidden;
+    color: black;
 }
 
 #title-info a:hover{
