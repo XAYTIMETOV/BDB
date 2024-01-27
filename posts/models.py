@@ -27,6 +27,7 @@ class Post(models.Model):
     staff = models.ForeignKey(User, on_delete=models.CASCADE)
     slug = AutoSlugField(populate_from='title', unique=True)
     title = models.CharField(max_length=255)
+    description = models.CharField(max_length=255, default="foydalanayotgan vaqtdagi operatsion tizim uchun trafik sarflanishi ham kiradi). Proksi-serverlar (shu jumladan VPN) orqali ishlaydigan ilovalardan foydalanganda ijtimoiy")
     body = RichTextField()
     likes = models.BigIntegerField(default=0)
     date = models.DateTimeField(auto_now_add=True)

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {%load static%}
-{% load poll_extras %}
 {% block content %}
+
     <section>
         <div id="articles-border">            
             <div id="articles">
@@ -18,15 +18,15 @@
                         <div id="title-info">
 
                             <div>
-                                <h3>{{ post.title|trans_text:LANGUAGE_CODE }}</h3>
+                                <h3>{{ post.title }}</h3>
                             </div>
-                            <p>{{ post.body | safe|trans_html:LANGUAGE_CODE|safe }}</p>
+                            <p>{{ post.body | safe }}</p>
                         </div>
 
                         <div id="like-print">
-                            <a id="likeButton" href="{% url 'pages:like_post' post.slug %}" onclick="likePost('{{ post.slug }}')">♡ {{ 'Foydali'|trans_text:LANGUAGE_CODE }} (<span id="likeCount">{{ post.likes }}</span>)</a>
-                            <button id="likeButtonHidden" style="display: none;">♥ {{ 'Foydali'|trans_text:LANGUAGE_CODE }} (<span id="likeCountHidden">{{ post.likes }}</span>)</button>
-                            <button onclick="window.print(); return false;">☰ {{ 'Chop qilish'|trans_text:LANGUAGE_CODE }}</button>
+                            <a id="likeButton" href="{% url 'pages:like_post' post.slug %}" style="color: white;" onclick="likePost('{{ post.slug }}')">♡ Foydali (<span id="likeCount">{{ post.likes }}</span>)</a>
+                            <button id="likeButtonHidden" style="display: none;">♥ Foydali (<span id="likeCountHidden">{{ post.likes }}</span>)</button>
+                            <button onclick="window.print(); return false;">☰ Chop qilish</button>
                         </div>
                     </div>
                 </div>           
@@ -34,7 +34,7 @@
         </div>
     </section>
 
-    <h1 id="sugg-title"><i class="fa fa-hand-o-right"></i>&nbsp{{ 'Tavfsiya qilinganlar'|trans_text:LANGUAGE_CODE }}</h1>
+    <h1 id="sugg-title"><i class="fa fa-hand-o-right"></i>&nbspTavfsiya qilinganlar</h1>
     <div id="sugg-border">
         <div id="suggests">
             {% for similar_post in similar_posts %}
@@ -47,14 +47,14 @@
                 <!--  -->
                 <div id="sugg-title-info">
                     <div>
-                        <h3>{{ similar_post.title|trans_text:LANGUAGE_CODE }}</h3>
+                        <h3>{{ similar_post.title }}</h3>
                     </div>
                     <div id="sugg-title-body">
-                        {{ similar_post.body | truncatechars_html:150 | safe|trans_html:LANGUAGE_CODE|safe }}
+                        {{ similar_post.description|truncatechars:165 }}
                     </div>
                     <div id="sugg-arttic">
                         <a href="{% url 'pages:home' %}?tag={{ post.tag }}">{{ similar_post.tag }}</a>
-                        <a href="{% url 'pages:post' similar_post.slug %}">{{ 'Batafsil'|trans_text:LANGUAGE_CODE }}</a>
+                        <a href="{% url 'pages:post' similar_post.slug %}">Batafsil</a>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <h1 id="izoh-title"><i class="fa fa-pencil-square"></i>&nbsp{{ 'Izohlar'|trans_text:LANGUAGE_CODE }}</h1>
+    <h1 id="izoh-title"><i class="fa fa-pencil-square"></i>&nbspIzohlar</h1>
     <div id="comments-border">
         <div id="comments">
             <!-- Comments -->
@@ -75,24 +75,24 @@
                 <div id="comm-msg">
                     <p>{{ comment.message }}</p>
                 </div>
-                <img src="../../static/images/user.png" />
+                <img src="{% static 'images/user.png' %}" />
             </div>
             {% endfor %}
         </div>
-        <a href="{% url 'pages:comments' %}" id="all-comms">{{ "Barcha izohlar" |trans_text:LANGUAGE_CODE }}</a>
+        <a href="{% url 'pages:comments' %}" id="all-comms">Barcha izohlar</a>
     </div>
 
     <div id="add-comment">
         <form action="{% url 'pages:post' post.slug %}" method="post" id="reqform">
             {% csrf_token %}
-            <h1><i class="fa fa-edit"></i>&nbsp{{ "Fikr bildirish" |trans_text:LANGUAGE_CODE }}</h1>
+            <h1><i class="fa fa-edit"></i>&nbspFikr bildirish</h1>
             <div id="name-surname">
-                <input type="text" name="name" maxlength="27" placeholder="{{'Ismingiz' |trans_text:LANGUAGE_CODE }}" required />
-                <input type="email" name="email" maxlength="50" placeholder="{{'Email manzilingiz' |trans_text:LANGUAGE_CODE }}" required />
+                <input type="text" name="name" maxlength="27" placeholder="Ismingiz" required />
+                <input type="email" name="email" maxlength="50" placeholder="Email manzilingiz" required />
             </div>
             <textarea name="commentary" required></textarea>
             <div id="form-bttns">
-                <input type="submit" value="{{'Yuborish' |trans_text:LANGUAGE_CODE }}" />
+                <input type="submit" value="Yuborish" />
             </div>
         </form>
     </div>

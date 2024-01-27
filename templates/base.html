@@ -32,25 +32,13 @@
 </head>
 <body>
     <header>
-            {% get_current_language as LANGUAGE_CODE %}
-        <a href="/{{LANGUAGE_CODE}}"><img src="{% static 'images/logo.png' %}" alt="logo"/></a>
-        <ul>
-            {% get_available_languages as LANGUAGES %}
-            {% get_language_info_list for LANGUAGES as languages %}
-            {% for lang in languages %}
-                <li>
-                    <a href="/{{ lang.code }}/">
-                        {{lang.name_local}}
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
+        <a href="{% url 'pages:home' %}"><img src="{% static 'images/logo.png' %}" alt="logo"/></a>
     </header>
     {% block content %}
     {% endblock content %}
     <footer>
         <div id="foot">
-            <h1>{{ "Footer Info"|trans_text:LANGUAGE_CODE }}</h1>
+            <h1>Footer Info</h1>
         </div>
     </footer>
     {% block script %}
@@ -78,13 +66,14 @@
         }
 
         setCookie('show_modal', 'true', 1);
+        // reklama chiqish vaqti 1 soat
 
         let PlayStoreUrl="";
         let AppStoreUrl="";
         let timer=5;
         Swal.fire({
             html: `
-           <div style="background-image: url('{% static 'images/advertising.png' %}'); background-size: cover; height: 90vh; position: relative;">
+           <div style="background-image: url('{% static 'images/advertising.png' %}'); background-size: cover; height: 50vh; position: relative;">
                <div style="position: absolute; bottom: 10px; left: 10px; text-align: left;">
                 <a href="${PlayStoreUrl}" target="_blank">
                   <img class="sw2-btn" src="{% static 'images/PlayStore.png' %}" alt="Play Market">
