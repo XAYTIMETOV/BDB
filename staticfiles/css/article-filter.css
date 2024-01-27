@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&family=Nunito:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Lexend', sans-serif;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+}
+
+header{
+    height: 150px;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    box-shadow: -5px 0 5px gray;
+    background-color: white;
+}
+
+header a{
+    display: flex;
+    align-items: top;
+    outline: none;
+}
+
+header a img{
+    height: 120px;
+    width: 700px;
+    border-radius: 20px;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 25px;
+    width: 100%;
+}
+
+#articles-border{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+#articles{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1240px;
+}
+
+#articles-title{
+    margin: 20px 0;
+}
+
+#articles-title h3{
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+#articles-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#article-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+    min-width: 350px;
+    min-height: 250px;
+    max-height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px gray;
+    background-color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#logo-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo-name img{
+    border: solid 2px;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+}
+
+#logo-name p{
+    font-size: 15px;
+}
+
+#title-info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 200px;
+    padding: 5px;
+    word-break: break-all;
+}
+
+#title-info h3{
+    font-size: 20px;
+    max-height: 55px;
+    overflow: hidden;
+    border-bottom: solid 1px;
+}
+
+#title-info p{
+    padding-top: 2px;
+    font-size: 18px;
+    height: 120px;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+footer{
+    border-top: solid 2px black;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+#foot{
+    padding: 10px 20px;
+    width: 1200px;
+}
+
+@media screen and (max-width: 1250px) {
+    #article-box{
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 774px) {
+    #article-box{
+        width: 100%;
+    }
+}

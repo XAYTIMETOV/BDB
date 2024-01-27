@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&family=Nunito:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Lexend', sans-serif;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+}
+
+header{
+    height: 150px;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    box-shadow: -5px 0 5px gray;
+    background-color: black;
+}
+
+header a{
+    display: flex;
+    align-items: top;
+    outline: none;
+}
+
+header a img{
+    height: 120px;
+    width: 700px;
+    border-radius: 20px;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 25px;
+    width: 100%;
+}
+
+#articles-border{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+#articles{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1240px;
+}
+
+#articles-list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#article-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 2px gray;
+    background-color: #3e3e3e;
+    padding: 10px;
+}
+
+#like-print{
+    display: flex;
+    gap: 15px;
+}
+
+#like-print button{
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: none;
+}
+
+#logo-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo-name img{
+    border: solid 2px;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+}
+
+#logo-name p{
+    font-size: 15px;
+}
+
+#title-info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5px;
+    word-break: break-all;
+}
+
+#title-info h3{
+    font-size: 20px;
+    max-height: 55px;
+    overflow: hidden;
+    border-bottom: solid 1px;
+}
+
+#title-info p{
+    padding-top: 2px;
+    font-size: 18px;
+    word-break: break-all;
+}
+
+#sugg-border{
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+#suggests{
+    box-shadow: 0 0 2px gray;
+    border-radius: 10px;
+    background-color: #3e3e3e;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    max-width: 1240px;
+}
+
+#sugg-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 32.5%;
+    min-width: 350px;
+    min-height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px gray;
+    background-color: #001242;
+    padding: 10px;
+    overflow-y: hidden;
+}
+
+#sugg-logo-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sugg-logo-name img{
+    border: solid 2px;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+}
+
+#sugg-logo-name p{
+    font-size: 15px;
+}
+
+#sugg-title{
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 1300px;
+    align-self: center;
+    padding: 0 40px;
+}
+
+#sugg-title-body p{
+    max-height:150px;
+    overflow-y: hidden;
+    margin-bottom: 40px;
+}
+
+#izoh-title{
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1300px;
+    align-self: center;
+    padding: 0 40px;
+}
+
+#sugg-arttic{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 95%;
+}
+
+#sugg-arttic a{
+    font-size: 12px;
+    border: solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 7px;
+    width: fit-content;
+    border-radius: 50px;
+    overflow-y: hidden;
+    color: white;
+}
+
+#comments-border{
+    margin: 10px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#comments{
+    box-shadow: 0 0 2px gray;
+    position: relative;
+    background-color: #3e3e3e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1240px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#comm{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 32.4%;
+    min-width: 350px;
+    max-height: 300px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 2px gray;
+    padding: 10px;
+    color: black;
+}
+
+#comm-title{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+#comm-title h2{
+    margin-right: 5px;
+    font-size: 20px;
+    width: 295px;
+    overflow-x: hidden;
+    color: white;
+}
+
+#comm-msg{
+    margin-top: 5px;
+    display: flex;
+}
+
+#comm-msg p{
+    word-break: break-all;
+    max-width: 340px;
+    overflow-y: hidden;
+    margin-right: 10px;
+    color: #9f9e9e;
+}
+
+#comm img{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    border: solid 1px gray;
+}
+
+
+#all-comms{
+    width: 100%;
+    max-width: 1240px;
+    margin: 10px 0 20px 0;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 20px;
+    background-color: #313131;
+    border: solid 1px gray;
+    color: #ffffff;
+}
+
+#all-comms:hover{
+    background-color: royalblue;
+    color: white;
+    transition: 0.5s;
+}
+
+#add-comment{
+    margin-bottom: 20px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#reqform{
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 2px gray;
+    width: 100%;
+    background-color: #313131;
+    max-width: 1240px;
+    gap: 20px;
+}
+
+#reqform h1{
+    font-size: 30px;
+}
+
+#name-surname{
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+#name-surname input{
+    width: 50%;
+    padding: 10px;
+    font-size: 15px;
+    background-color: #00153a;
+    color: white;
+}
+
+#add-comment form textarea{
+    min-width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    min-height: 300px;
+    background-color: #2a2a2a;
+    color: white;
+}
+
+#form-bttns input{
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: #001242;
+    border-radius: 20px;
+    border: solid 1px gray;
+    cursor: pointer;
+    color: white;
+}
+
+#form-bttns input:hover{
+    background-color: #001242;
+    color: white;
+    transition: 0.5s;
+}
+
+footer{
+    background-color: #171717;
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+#foot{
+    padding: 10px 20px;
+    width: 1200px;
+}
+
+@media print{
+    body{
+        visibility: hidden;
+    }
+
+    #article-box{
+        visibility: visible;
+    }
+
+    #like-print{
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 794px){
+    #comm{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    header{
+        height: 90px;
+    }
+
+    header a img{
+        width: 400px;
+        height: 70px;
+    }
+}
+
+@media screen and (max-width: 428px){
+    #comm{
+        width: 100%;
+        min-width: 250px;
+    }
+
+    header{
+        height: 60px;
+    }
+
+    header a img{
+        width: 250px;
+        height: 40px;
+    }
+
+    #articles-title h3{
+        font-size: 12px;
+    }
+
+    #article-box{
+        width: 100%;
+        min-width: 50px;
+    }
+
+    #logo-name img{
+        width: 26px;
+        height: 26px;
+    }
+
+    #logo-name p{
+        font-size: 12px;
+    }
+
+    #title-info h3{
+        font-size: 14px;
+    }
+
+    #title-info p{
+        font-size: 12px;
+    }
+
+    #title-info #arttic a{
+        font-size: 8px;
+    }
+
+    #comments h1{
+        font-size: 15px;
+    }
+
+    #all-comms{
+        padding: 5px 0;
+        font-size: 10px;
+    }
+
+    #sugg-title{
+        font-size: 18px;
+    }
+
+    #sugg-box{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    header {
+        height: 80px;
+    }
+
+    header a img {
+        width: 400px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    header {
+        height: 60px;
+    }
+
+    header a img {
+        width: 250px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 1279px){
+    #sugg-box{
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 828px){
+    h1{
+        font-size: 20px;
+    }
+
+    h3{
+        font-size: 18px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+
+    #sugg-box{
+        width: 100%;
+        min-width: 0;
+    }
+}
