@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-
+    'django.contrib.sites',
     # personal apps
     "operators.apps.OperatorsConfig",
     "tags.apps.TagsConfig",
@@ -57,9 +57,17 @@ INSTALLED_APPS = [
 
     # installed apps
     "rest_framework",
-    'ckeditor',
-    'ckeditor_uploader',
+    "ckeditor",
+    "ckeditor_uploader",
+
+    "cms",
+    "menus",
+    "treebeard",
+
+    "django_check_seo",
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
