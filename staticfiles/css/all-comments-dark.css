@@ -112,8 +112,6 @@ header a img{
 #comm-msg p{
     word-break: break-all;
     max-width: 340px;
-    max-height: 85px;
-    overflow-y: hidden;
     margin-right: 10px;
     color: #9f9e9e;
 }

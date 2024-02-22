@@ -11,7 +11,7 @@
                     <div id="article-box">
                         <!--  -->
                         <div id="logo-name">
-                            <img src="{{ post.operator.photo.url }}" />
+                            <img src="{{ post.operator.photo.url }}" style="border-color: {{ post.operator.color_column }}" />
                             <p>{{ post.operator.name }}</p>
                         </div>
                         <!--  -->
@@ -24,7 +24,7 @@
                         </div>
 
                         <div id="like-print">
-                            <a id="likeButton" href="{% url 'pages:like_post' post.slug %}" style="color: white;" onclick="likePost('{{ post.slug }}')">♡ Foydali (<span id="likeCount">{{ post.likes }}</span>)</a>
+                            <a id="likeButton" href="{% url 'pages:like_post' post.slug %}"color: "black";" onclick="likePost('{{ post.slug }}')">♡ Foydali (<span id="likeCount">{{ post.likes }}</span>)</a>
                             <button id="likeButtonHidden" style="display: none;">♥ Foydali (<span id="likeCountHidden">{{ post.likes }}</span>)</button>
                             <button onclick="window.print(); return false;">☰ Chop qilish</button>
                         </div>
@@ -41,7 +41,7 @@
                 <div id="sugg-box">
                 <!--  -->
                 <div id="sugg-logo-name">
-                    <img src="{{ similar_post.operator.photo.url }}" alt="operator logo"/>
+                    <img src="{{ similar_post.operator.photo.url }}" alt="operator logo" style="border-color: {{ similar_post.operator.color_column }}"/>
                     <p>{{ similar_post.operator.name }}</p>
                 </div>
                 <!--  -->
@@ -50,7 +50,7 @@
                         <h3>{{ similar_post.title }}</h3>
                     </div>
                     <div id="sugg-title-body">
-                        {{ similar_post.description|truncatechars:165 }}
+                        {{ similar_post.description }}
                     </div>
                     <div id="sugg-arttic">
                         <a href="{% url 'pages:home' %}?tag={{ post.tag }}">{{ similar_post.tag }}</a>
@@ -97,24 +97,66 @@
         </form>
     </div>
 {% endblock content %}
-{% block script %}
-    <script>
-        let dark = '{% block styledark %} <link id="style" rel="stylesheet" type="text/css" href="{% static 'css/article-more-dark.css' %}"> {% endblock styledark %}">';
-        let light = '{% block style %} <link id="style" rel="stylesheet" type="text/css" href="{% static 'css/article-more.css' %}"> {% endblock style %}">';
+{% block style %}
+    {% if request.COOKIES.dark_mode == 'true' %}
+        <link id='style' rel='stylesheet' type='text/css' href='{% static 'css/article-more-dark.css' %}'>
+    {% elif request.COOKIES.dark_mode == 'false' %}
+        <link id='style' rel='stylesheet' type='text/css' href='{% static 'css/article-more.css' %}'>
+    {% else %}
+        <link id='style' rel='stylesheet' type='text/css' href='{% static 'css/article-more.css' %}'>
+    {% endif %}
+{% endblock style %}
 
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.getElementById('hdr').innerHTML=dark;
-        }else{
-            document.getElementById('hdr').innerHTML=light;
+{% block script %}
+        let darkStyle = '<link id="style" rel="stylesheet" type="text/css" href="{% static 'css/article-more-dark.css' %}"> ">';
+        let lightStyle = '<link id="style" rel="stylesheet" type="text/css" href="{% static 'css/article-more.css' %}">">';
+    
+        let header = document.getElementById('hdr');
+    
+        // Function to remove existing style and add new style
+        function setStyle(style) {
+            let oldStyleElement = document.getElementById('style');
+            if (oldStyleElement) {
+                oldStyleElement.remove();
+            }
+            header.innerHTML += style;
         }
+        
+        function setCookie(name, value, hours) {
+            var date = new Date();
+            date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+            var expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+    
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setStyle(darkStyle); // Apply dark mode style
+            setCookie('dark_mode', 'true', 120); // Set cookie for dark mode
+        } else {
+            setStyle(lightStyle); // Apply light mode style
+            setCookie('dark_mode', 'false', 120); // Set cookie for light mode
+        }
+        
         function likePost(post_slug) {
             document.cookie = post_slug + "_is_liked=true; path=/";
+        }
+
+        function checkIfPostIsLiked(post_slug) {
+            // Retrieve the value of the cookie
+            var likedCookie = getCookie(post_slug + '_is_liked');
+
+            // Check if the cookie exists and its value is "true"
+            if (likedCookie && likedCookie === "true") {
+                return true;
+            } else {
+                return false;
+            }
         }
 
         document.addEventListener("DOMContentLoaded", function() {
             // Check if the post is liked (you need to implement this logic)
             var isPostLiked = checkIfPostIsLiked('{{ post.slug }}');
-
+            console.log(1);
             // Get the likeButton and likeButtonHidden elements
             var likeButton = document.getElementById("likeButton");
             var likeButtonHidden = document.getElementById("likeButtonHidden");
@@ -128,18 +170,6 @@
                 likeButtonHidden.style.display = "none";
             }
         });
-        function checkIfPostIsLiked(post_slug) {
-            // Retrieve the value of the cookie
-            var likedCookie = getCookie(post_slug + '_is_liked');
-
-            // Check if the cookie exists and its value is "true"
-            if (likedCookie && likedCookie === "true") {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
         // Function to get the value of a cookie by name
         function getCookie(cookieName) {
             var name = cookieName + "=";
@@ -158,6 +188,4 @@
             // Return null if the cookie is not found
             return null;
         }
-
-    </script>
 {% endblock script %}

@@ -25,14 +25,62 @@
 
 {% endblock content %}
 
+{% block style %}
+    {% if request.COOKIES.dark_mode == 'true' %}
+        <link id='style' rel='stylesheet' type='text/css' href='{% static 'css/all-comments-dark.css' %}'>
+    {% elif request.COOKIES.dark_mode == 'false' %}
+        <link id='style' rel='stylesheet' type='text/css' href='{% static 'css/all-comments.css' %}'>
+    {% else %}
+        <link id='style' rel='stylesheet' type='text/css' href='{% static 'css/all-comments.css' %}'>
+    {% endif %}
+{% endblock style %}
 {% block script %}
-    <script>
-        let dark = '{% block styledark %} <link id="style" rel="stylesheet" type="text/css" href="{% static 'css/all-comments-dark.css' %}"> {% endblock styledark %}">';
-        let light = '{% block style %} <link id="style" rel="stylesheet" type="text/css" href="{% static 'css/all-comments.css' %}"> {% endblock style %}">';
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.getElementById('hdr').innerHTML=dark;
-        }else{
-            document.getElementById('hdr').innerHTML=light;
+    let darkStyle = "<link id='style' rel='stylesheet' type='text/css' href='{% static 'css/all-comments-dark.css' %}'>";
+    let lightStyle = "<link id='style' rel='stylesheet' type='text/css' href='{% static 'css/all-comments.css' %}'>";
+
+    let header = document.getElementById('hdr');
+
+    // Function to remove existing style and add new style
+    function setStyle(style) {
+        let oldStyleElement = document.getElementById('style');
+        if (oldStyleElement) {
+            oldStyleElement.remove();
         }
-    </script>
+        header.innerHTML += style;
+    }
+    
+    function setCookie(name, value, hours) {
+        var date = new Date();
+        date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+        var expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setStyle(darkStyle); // Apply dark mode style
+        setCookie('dark_mode', 'true', 120); // Set cookie for dark mode
+    } else {
+        setStyle(lightStyle); // Apply light mode style
+        setCookie('dark_mode', 'false', 120); // Set cookie for light mode
+    }
+    // Function to handle color scheme changes
+    function handleColorSchemeChange(event) {
+        if (event.matches) {
+            setCookie('dark_mode', 'true', 120); // Set cookie for dark mode
+            setStyle(darkStyle); // Apply dark mode style
+        } else {
+            setCookie('dark_mode', 'false', 120); // Set cookie for light mode
+            setStyle(lightStyle); // Apply light mode style
+        }
+    }
+    
+    // Check if the browser supports matchMedia
+    if (window.matchMedia) {
+        // Listen for changes in the user's preferred color scheme
+        const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        // Call the handler initially
+        handleColorSchemeChange(colorSchemeQuery);
+        // Attach the handler to respond to future changes
+        colorSchemeQuery.addEventListener('change', handleColorSchemeChange);
+    }
 {% endblock script %}

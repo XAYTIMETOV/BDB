@@ -26,7 +26,6 @@ def home(request):
     elif query:
         posts = Post.objects.filter(
             Q(title__icontains=query) |
-            Q(body__icontains=query) |
             Q(tag__name__icontains=query)
         )
     else:
@@ -94,7 +93,7 @@ def post(request, slug):
 
     all_posts = Post.objects.all()
 
-    similar_posts = Post.find_similar_posts(post, all_posts, n=4)
+    similar_posts = Post.find_similar_posts(post, all_posts, n=6)
 
     context = {
         'post': post,

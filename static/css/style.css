@@ -265,8 +265,10 @@ section{
     color: black;
 }
 
-#title-info a:hover{
-    text-decoration: underline;
+#arttic a:hover{
+    transform: scale(1.02);
+    transition: 0.5s;
+    box-shadow: 0 0 2px gray;
 }
 
 .pagination{
@@ -887,22 +889,6 @@ footer{
         height: 26px;
     }
 
-    #logo-name p{
-        font-size: 12px;
-    }
-
-    #title-info h3{
-        font-size: 14px;
-    }
-
-    #title-info p{
-        font-size: 12px;
-    }
-
-    #title-info #arttic a{
-        font-size: 8px;
-    }
-
     .step-links a{
         width: 20px;
         height: 20px;
@@ -1035,22 +1021,6 @@ footer{
         height: 26px;
     }
 
-    #logo-name p{
-        font-size: 12px;
-    }
-
-    #title-info h3{
-        font-size: 14px;
-    }
-
-    #title-info p{
-        font-size: 12px;
-    }
-
-    #title-info #arttic a{
-        font-size: 8px;
-    }
-
     .current h1{
         width: 20px;
         height: 20px;
@@ -1141,57 +1111,5 @@ footer{
         width: 15px;
         height: 15px;
     }
-
-    #title-info #arttic a{
-        font-size: 8px;
-    }
-
-    .current h1{
-        width: 20px;
-        height: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 8px;
-    }
-
-    #comments h1{
-        font-size: 15px;
-    }
-
-    #all-comms{
-        padding: 5px 0;
-        font-size: 10px;
-    }
-
-    #operator-poll label{
-        font-size: 18px;
-    }
-
-    #operator-poll div input{
-        width: 14px;
-        height: 14px;
-    }
-
-    #operator-poll div label{
-        font-size: 12px;
-    }
-
-    #submit-o{
-        font-size: 12px;
-        padding: 7px 0;
-    }
-
-    #result-o{
-        padding: 7px 0;
-        font-size: 12px;
-    }
 }
 
-@media screen and (max-width: 320px){
-    #operator-box{
-        width: 98%;
-        min-width: 100px;
-        height: 80px;
-    }
-}

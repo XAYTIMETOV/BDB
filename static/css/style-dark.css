@@ -270,8 +270,10 @@ section{
     color: white;
 }
 
-#title-info a:hover{
-    text-decoration: underline;
+#arttic a:hover{
+    transform: scale(1.02);
+    transition: 0.5s;
+    box-shadow: 0 0 2px gray;
 }
 
 .pagination{
